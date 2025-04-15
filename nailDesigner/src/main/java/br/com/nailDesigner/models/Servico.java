@@ -7,7 +7,7 @@ import jakarta.validation.constraints.NotEmpty;
 public class Servico {
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.UUID)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long codigo;
 	
 	@NotEmpty

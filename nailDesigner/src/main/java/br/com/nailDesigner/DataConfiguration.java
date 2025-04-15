@@ -13,8 +13,8 @@ import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 public class DataConfiguration {
 	
 // Necessario definir o usuario e a senha do seu banco de dados
-	private String usuario = " !"; 
-	private String senha = " ! ";
+	private String usuario = "root"; 
+	private String senha = "root";
 	
 	@Bean
 	public DataSource dataSource() {

@@ -9,7 +9,7 @@ public class Funcionario {
 	@Id @GeneratedValue
     private Long id;
 	@Column(unique = true, nullable = false)
-	private String cpf;
+	private String email;
     private String nome;
 	public Long getId() {
 		return id;
@@ -18,10 +18,10 @@ public class Funcionario {
 		this.id = id;
 	}
 	public String getCpf() {
-		return cpf;
+		return email;
 	}
 	public void setCpf(String cpf) {
-		this.cpf = cpf;
+		this.email = cpf;
 	}
 	public String getNome() {
 		return nome;
