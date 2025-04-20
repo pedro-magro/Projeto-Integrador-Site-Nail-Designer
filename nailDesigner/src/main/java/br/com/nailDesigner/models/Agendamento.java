@@ -1,7 +1,10 @@
 package br.com.nailDesigner.models;
 
 import jakarta.persistence.*;
-import java.time.LocalDateTime;
+
+import java.time.LocalDate;
+import java.time.LocalTime;
+import java.util.List;
 
 @Entity
 public class Agendamento {
@@ -10,57 +13,74 @@ public class Agendamento {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
 	
+	private LocalDate data;
+	private LocalTime hora;
+	
 	@ManyToOne
-    private Cliente cliente;
+    private Usuario cliente;
 
-    @ManyToOne
-    private Funcionario funcionario;
+    @ManyToMany
+    private List<Usuario> funcionarios;
 
-    @ManyToOne
-    private Servico servico;
+    @ManyToMany
+    private List<Servico> servicos;
 
-    private LocalDateTime dataHora;
-
+    
+    // Getters & Setters
+    
+    
 	public long getId() {
 		return id;
 	}
-	
-	public void setId(Long id) {
+
+	public void setId(long id) {
 		this.id = id;
 	}
 
-	public Cliente getCliente() {
+	public LocalDate getData() {
+		return data;
+	}
+
+	public void setData(LocalDate data) {
+		this.data = data;
+	}
+
+	public LocalTime getHora() {
+		return hora;
+	}
+
+	public void setHora(LocalTime hora) {
+		this.hora = hora;
+	}
+
+	public Usuario getCliente() {
 		return cliente;
 	}
 
-	public void setCliente(Cliente cliente) {
+	public void setCliente(Usuario cliente) {
 		this.cliente = cliente;
 	}
 
-	public Funcionario getFuncionario() {
-		return funcionario;
+	public List<Usuario> getFuncionarios() {
+		return funcionarios;
 	}
 
-	public void setFuncionario(Funcionario funcionario) {
-		this.funcionario = funcionario;
+	public void setFuncionarios(List<Usuario> funcionarios) {
+		this.funcionarios = funcionarios;
 	}
 
-	public Servico getServico() {
-		return servico;
+	public List<Servico> getServicos() {
+		return servicos;
 	}
 
-	public void setServico(Servico servico) {
-		this.servico = servico;
+	public void setServicos(List<Servico> servicos) {
+		this.servicos = servicos;
 	}
 
-	public LocalDateTime getDataHora() {
-		return dataHora;
-	}
-
-	public void setDataHora(LocalDateTime dataHora) {
-		this.dataHora = dataHora;
-	}
-	
+    
+    
+    
+    
 	
 
 }

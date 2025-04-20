@@ -1,5 +1,7 @@
 package br.com.nailDesigner.models;
 
+import java.util.List;
+
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotEmpty;
 
@@ -19,10 +21,12 @@ public class Servico {
 	@NotEmpty
 	private String preco;
 	
-	@NotEmpty
-	private String imagem;
+	private List<String> imagens; //Url das imagens 
 	
+	
+	//Getters & Setters
 
+	
 	public long getCodigo() {
 		return codigo;
 	}
@@ -55,15 +59,13 @@ public class Servico {
 		this.preco = preco;
 	}
 
-	public String getImagem() {
-		return imagem;
+	public List<String> getImagens() {
+		return imagens;
 	}
 
-	public void setImagem(String imagem) {
-		this.imagem = imagem;
+	public void setImagens(List<String> imagens) {
+		this.imagens = imagens;
 	}
-	
-	
-	
+		
 
 }

@@ -1,4 +1,4 @@
-package br.com.nailDesigner;
+package br.com.nailDesigner.config;
 
 import javax.sql.DataSource;
 
@@ -10,7 +10,7 @@ import org.springframework.orm.jpa.vendor.Database;
 import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 
 @Configuration
-public class DataConfiguration {
+public class DataConfig {
 	
 // Necessario definir o usuario e a senha do seu banco de dados
 	private String usuario = "root"; 

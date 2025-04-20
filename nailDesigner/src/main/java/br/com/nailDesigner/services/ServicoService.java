@@ -8,7 +8,7 @@ import br.com.nailDesigner.models.*;
 import java.util.List;
 
 @Service
-public class ServicoServices {
+public class ServicoService {
 	
 	@Autowired
 	private ServicoRepository servicoRepo;

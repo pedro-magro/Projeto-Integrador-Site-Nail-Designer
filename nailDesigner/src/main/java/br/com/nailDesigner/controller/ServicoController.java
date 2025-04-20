@@ -1,4 +1,4 @@
-package br.com.nailDesinger.controller;
+package br.com.nailDesigner.controller;
 
 public class ServicoController {
 
