@@ -7,10 +7,11 @@
     <meta name="author" content="Vinícius Roodrigues Xavier, Pedro Henrique Magro, Felipe Augusto Soares">
     <meta name="description" content="Site Agende Nail que faz agendamentos de unhas">
     <meta name="keywords" content="landing page, agendamentos de unhas, nail designer">
-    <link href="https://fonts.googleapis.com/css2?family=Hedvig+Letters+Serif:opsz@12..24&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Hedvig+Letters+Serif:opsz@12..24&display=swap"
+        rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
 
-       
+
     <link rel="stylesheet" href="css/style.css">
     <title>Agenda Nail | Página Inicial</title>
 </head>
@@ -35,13 +36,21 @@
             <p>Seja bem vindo ao<br><span class="destaque">Agende Nail</span></p>
             <p>Conheça meu <span class="italic-class">négocio</span> e marque uma agenda</p>
         </div>
-        <div> 
-            <button>Agenda</button>
+        <div>
+            <button class="agenda-btn">Agenda</button>
+        </div>
+        <div class="linha-seta">
+            <div class="linha"></div>
+            <a href="#galery">
+                <img src="assets/img/seta.png" alt="Seta para baixo" class="seta">
+            </a>
+            <div class="linha"></div>
         </div>
         <div class="titulo-designs">
             <p>Confira os designs excluivos</p>
         </div>
-        <div class="galery">
+
+        <div class="galery" id="galery">
             <img class="image-nails" src="assets/img/unha-1.jpg" alt=""></img>
             <img class="image-nails" src="assets/img/unha-2.jpg" alt=""></img>
             <img class="image-nails" src="assets/img/unha-3.jpg" alt=""></img>
@@ -55,7 +64,140 @@
             <img class="image-nails" src="assets/img/unha-11.jpg" alt=""></img>
             <img class="image-nails" src="assets/img/unha-12.jpg" alt=""></img>
         </div>
-    </div>
+
+        <section class="produtos">
+            <div class="texto-produtos">
+                <h2>Produtos</h2>
+                <p>Conheça nossos esmaltes e materiais profissionais para cuidar das suas unhas com qualidade e estilo!
+                </p>
+            </div>
+            <div class="imagem-produtos">
+                <img src="assets/img/still-life-beauty-products-spreading-out.jpg" alt="Esmaltes coloridos derramados">
+            </div>
+        </section>
+
+        <section class="serviços">
+            <div class="imagem-produtos">
+                <img src="assets/img/close-up-manicurist-using-nail-polish.jpg" alt="">
+            </div>
+            <div class="texto-produtos">
+                <h2>Serviços</h2>
+                <p>Conheça nossos serviços profissionais para cuidar das suas unhas com qualidade e estilo</p>
+            </div>
+        </section>
+
+        <section class="localizacao">
+            <div class="titulo-designs">
+                <h1>Localização</h1>
+            </div>
+            <label for="endereco"><strong>Endereço:</strong></label>
+            <input type="text" id="endereco" value="Rua Exemplo, 123 - São Paulo, SP" readonly>
+
+            <div class="mapa">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3656.7317718937334!2d-46.65797898445557!3d-23.578059068266736!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce59c79f6f7ed7%3A0x2e2d05d8f1e7d99e!2sAv.%20Paulista%2C%201000!5e0!3m2!1spt-BR!2sbr!4v1713880884011!5m2!1spt-BR!2sbr"
+                    width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </section>
+
+            <div class="faixada-texto-contato">
+                <p>Fale comigo pelo WhatsApp <strong>+55 (11) 97816-8814<br></strong> Curta e compartilhe meus videos nas <span class="italic-class">redes sociais</span>:</p>
+            </div>
+
+            <div class="instagram-profile">
+                <div class="profile-header">
+                    <img src="assets/img/unha-7.jpg" alt="Profile picture" class="profile-pic">
+                    <div class="profile-info">
+                        <p class="username">@naildesignerjx</p>
+                        <p class="name">Jessika Xavier</p>
+                    </div>
+                    <div class="button">
+                        <button class="follow-btn">Seguir</button>
+                    </div>
+                    <div class="button">
+                        <button class="message-btn">✉</button>
+                    </div>
+                        
+                        
+                </div>
+                
+                
+                <div class="video-section">
+                    <!-- Vídeo 1 -->
+                    <div class="video-thumbnail">
+                        <video loop muted playsinline class="instagram-video" poster="assets/img/thumbnail1.jpg">
+                            <source src="assets/img/video1.mp4" type="video/mp4">
+                        </video>
+                        <div class="video-info">
+                            <div class="video-stats">
+                                <span>🤍</span>
+                                <span>▶</span>
+                                <span>💬</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Vídeo 2 -->
+                    <div class="video-thumbnail">
+                        <video loop muted playsinline class="instagram-video" poster="assets/img/thumbnail2.jpg">
+                            <source src="assets/img/video2.mp4" type="video/mp4">
+                        </video>
+                        <div class="video-info">
+                            <div class="video-stats">
+                                <span>🤍</span>
+                                <span>▶</span>
+                                <span>💬</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Vídeo 3 -->
+                    <div class="video-thumbnail">
+                        <video loop muted playsinline class="instagram-video" poster="assets/img/thumbnail3.jpg">
+                            <source src="assets/img/video3.mp4" type="video/mp4">
+                        </video>
+                        <div class="video-info">
+                            <div class="video-stats">
+                                <span>🤍</span>
+                                <span>▶</span>
+                                <span>💬</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer>
+            <div class="container-footer">
+              
+              <div class="footer-text">
+                <p><strong>Endereço:</strong><br>
+                  Rua Antônio Baldusco - Jd. Montesano,<br>
+                  Itapecerica Da Serra - SP
+                </p>
+                <p>@2025 Agende Nail</p>
+              </div>
+              
+              <div class="redes-sociais-footer">
+                <p>Redes Sociais</p>
+                <div>
+                  <a href="https://api.whatsapp.com/send/?phone=5511978168814&text&type=phone_number&app_absent=0" target="_blank">
+                    <img src="assets/img/whatsapp-icone.png" alt="WhatsApp">
+                  </a>
+                  <a href="https://www.instagram.com/naildesignerjx/" target="_blank">
+                    <img src="assets/img/instagram-icone.png" alt="Instagram">
+                  </a>
+                  <a href="https://www.tiktok.com/@jessikaxaviier?_t=8e9KNyf8geU&_r=1" target="_blank">
+                    <img src="assets/img/tiktok-icone.png" alt="Tik Tok">
+                  </a>
+                </div>
+              </div>
+              
+            </div>
+          </footer>
+    
+
 
 </body>
 
