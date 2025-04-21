@@ -18,13 +18,13 @@ div.container {
 }
 
 .logo {
-    background-image: url('../assets/img/logo-preto-agende-nail.png');
-    height: 100px;
-    width: 100px;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
-    margin-left: 10px;
+  background-image: url("../assets/img/logo-preto-agende-nail.png");
+  height: 100px;
+  width: 100px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  margin-left: 10px;
 }
 
 .menu {
@@ -81,25 +81,25 @@ div.container {
 }
 
 @media (max-width: 768px) {
-    .container {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        gap: 20px;
-    }
+  .container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+  }
 
-    .logo {
-        margin: 0 auto;
-    }
+  .logo {
+    margin: 0 auto;
+  }
 
-    .menu {
-        flex-direction: column;
-        gap: 10px;
-    }
+  .menu {
+    flex-direction: column;
+    gap: 10px;
+  }
 
-    .foto-perfil {
-        margin-top: 10px;
-    }
+  .foto-perfil {
+    margin-top: 10px;
+  }
 }
 
 .faixada {
@@ -109,13 +109,21 @@ div.container {
   align-items: center;
   flex-direction: column;
   text-align: center;
+  font-family: "Playfair Display", serif;
   top: 250px;
   gap: 5px;
 }
 
 .faixada-texto p:not(:last-of-type) {
   font-size: 56px;
+  font-weight: 580;
+  line-height: 0.95;
+}
+
+.destaque {
   font-weight: bold;
+  font-size: 1.2em;
+  color: navy;
 }
 
 .faixada-texto p:nth-of-type(2) {
@@ -126,6 +134,12 @@ div.container {
   position: relative;
   font-size: 24px;
   font-weight: 400px;
+  margin-top: 30px;
+}
+
+.italic-class {
+  font-style: italic;
+  font-weight: bold;
 }
 
 .faixada button {
@@ -133,10 +147,48 @@ div.container {
   height: 50px;
   border-radius: 10px;
   margin-top: 40px;
-  background-color: #5330D3;
+  background-color: #5330d3;
   color: white;
   border: none;
   font-size: 20px;
 }
 
+.titulo-designs {
+  margin-top: 400px;
+  font-family: "Playfair Display", serif;
+  font-size: 56px;
+  font-weight: 580;
+}
 
+.galery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+  max-width: 1500px;
+  margin-top: 40px;
+}
+
+.galery img {
+  width: 400px;
+  height: 500px; /* define altura fixa */
+  object-fit: cover; /* mantém proporção e centraliza o corte */
+  border-radius: 20px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.2s;
+}
+
+.image-nails {
+  width: 450px;
+  background-size: cover;
+  height: auto;
+  display: flex;
+  flex-wrap: nowrap;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+}
+
+.galery img:hover {
+  transform: scale(1.05);
+}
