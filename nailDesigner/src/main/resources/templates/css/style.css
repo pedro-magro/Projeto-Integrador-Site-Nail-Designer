@@ -15,7 +15,8 @@ body {
     #dcd5ff 26%,
     #dfd9fe 37%,
     #ededed 50%,
-    #ededed 70%
+    #ededed 70%,
+    #dcd5ff 100%
   );
 }
 
@@ -287,7 +288,6 @@ div.container {
 .localizacao {
   width: 100%;
   padding: 50px;
-  background-color: #f2f2f2;
   text-align: center;
   gap: 30px;
 }
@@ -429,6 +429,16 @@ div.container {
   margin-top: 30px;
 }
 
+.faixada-texto-contato a {
+  transition: transform 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.faixada-texto-contato a:hover {
+  transform: scale(0.9);
+}
+
 
 
 
@@ -437,7 +447,7 @@ div.container {
 footer {
   margin-top: 400px;
   padding: 40px 0;
-  background-color: #f4f4f4;
+  background-color: #c2b7fa;
   font-family: "Playfair Display", serif;
   border-top: 1px solid #ccc;
 }
@@ -481,9 +491,9 @@ footer {
 .redes-sociais-footer img {
   width: 30px;
   height: 30px;
-  transition: transform 0.3s;
+  transition: transform 0.3s ease;
 }
 
 .redes-sociais-footer img:hover {
-  transform: scale(1.1);
+  transform: scale(1.2);
 }

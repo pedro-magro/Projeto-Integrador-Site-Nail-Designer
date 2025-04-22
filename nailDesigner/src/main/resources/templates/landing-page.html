@@ -65,7 +65,7 @@
             <img class="image-nails" src="assets/img/unha-12.jpg" alt=""></img>
         </div>
 
-        <section class="produtos">
+        <div class="produtos">
             <div class="texto-produtos">
                 <h2>Produtos</h2>
                 <p>Conheça nossos esmaltes e materiais profissionais para cuidar das suas unhas com qualidade e estilo!
@@ -74,9 +74,9 @@
             <div class="imagem-produtos">
                 <img src="assets/img/still-life-beauty-products-spreading-out.jpg" alt="Esmaltes coloridos derramados">
             </div>
-        </section>
+        </div>
 
-        <section class="serviços">
+        <div class="serviços">
             <div class="imagem-produtos">
                 <img src="assets/img/close-up-manicurist-using-nail-polish.jpg" alt="">
             </div>
@@ -84,14 +84,15 @@
                 <h2>Serviços</h2>
                 <p>Conheça nossos serviços profissionais para cuidar das suas unhas com qualidade e estilo</p>
             </div>
-        </section>
+        </div>
 
-        <section class="localizacao">
+        <div class="localizacao">
             <div class="titulo-designs">
                 <h1>Localização</h1>
             </div>
             <label for="endereco"><strong>Endereço:</strong></label>
-            <input type="text" id="endereco" value="Rua Exemplo, 123 - São Paulo, SP" readonly>
+            <input type="text" id="endereco" value="Rua Antônio Baldusco - Jd. Montesano, Itapecerica Da Serra - SP"
+                readonly>
 
             <div class="mapa">
                 <iframe
@@ -99,104 +100,121 @@
                     width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"
                     referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
-        </section>
+        </div>
 
-            <div class="faixada-texto-contato">
-                <p>Fale comigo pelo WhatsApp <strong>+55 (11) 97816-8814<br></strong> Curta e compartilhe meus videos nas <span class="italic-class">redes sociais</span>:</p>
+        <div class="faixada-texto-contato">
+            <p>
+                Fale comigo pelo WhatsApp
+                <a class="whatsapp-link"
+                    href="https://api.whatsapp.com/send/?phone=5511978168814&text&type=phone_number&app_absent=0">
+                    <strong>+55 (11) 97816-8814</strong>
+                </a>
+                <br>
+                Curta e compartilhe meus vídeos nas
+                <span class="italic-class">redes sociais</span>:
+            </p>
+        </div>
+
+        <div class="instagram-profile">
+            <div class="profile-header">
+                
+                <img src="assets/img/unha-7.jpg" alt="Profile picture" class="profile-pic">
+                <div class="profile-info">
+                
+                    <p class="username">@naildesignerjx</p>
+                    <p class="name">Jessika Xavier</p>
+                </div>
+                <div class="button">
+                    <a href="https://www.instagram.com/naildesignerjx/">
+                        <button class="follow-btn">Seguir</button>
+                    </a>
+                </div>
+                <div class="button">
+                    <a href="https://www.instagram.com/naildesignerjx/">
+                        <button class="message-btn">✉</button>
+                    </a>
+
+                </div>
+
+
             </div>
 
-            <div class="instagram-profile">
-                <div class="profile-header">
-                    <img src="assets/img/unha-7.jpg" alt="Profile picture" class="profile-pic">
-                    <div class="profile-info">
-                        <p class="username">@naildesignerjx</p>
-                        <p class="name">Jessika Xavier</p>
+
+            <div class="video-section">
+                <!-- Vídeo 1 -->
+                <div class="video-thumbnail">
+                    <video loop muted playsinline class="instagram-video" poster="assets/img/thumbnail1.jpg">
+                        <source src="assets/img/video1.mp4" type="video/mp4">
+                    </video>
+                    <div class="video-info">
+                        <div class="video-stats">
+                            <span>🤍</span>
+                            <span>▶</span>
+                            <span>💬</span>
+                        </div>
                     </div>
-                    <div class="button">
-                        <button class="follow-btn">Seguir</button>
-                    </div>
-                    <div class="button">
-                        <button class="message-btn">✉</button>
-                    </div>
-                        
-                        
                 </div>
-                
-                
-                <div class="video-section">
-                    <!-- Vídeo 1 -->
-                    <div class="video-thumbnail">
-                        <video loop muted playsinline class="instagram-video" poster="assets/img/thumbnail1.jpg">
-                            <source src="assets/img/video1.mp4" type="video/mp4">
-                        </video>
-                        <div class="video-info">
-                            <div class="video-stats">
-                                <span>🤍</span>
-                                <span>▶</span>
-                                <span>💬</span>
-                            </div>
+
+                <!-- Vídeo 2 -->
+                <div class="video-thumbnail">
+                    <video loop muted playsinline class="instagram-video" poster="assets/img/thumbnail2.jpg">
+                        <source src="assets/img/video2.mp4" type="video/mp4">
+                    </video>
+                    <div class="video-info">
+                        <div class="video-stats">
+                            <span>🤍</span>
+                            <span>▶</span>
+                            <span>💬</span>
                         </div>
                     </div>
-                    
-                    <!-- Vídeo 2 -->
-                    <div class="video-thumbnail">
-                        <video loop muted playsinline class="instagram-video" poster="assets/img/thumbnail2.jpg">
-                            <source src="assets/img/video2.mp4" type="video/mp4">
-                        </video>
-                        <div class="video-info">
-                            <div class="video-stats">
-                                <span>🤍</span>
-                                <span>▶</span>
-                                <span>💬</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Vídeo 3 -->
-                    <div class="video-thumbnail">
-                        <video loop muted playsinline class="instagram-video" poster="assets/img/thumbnail3.jpg">
-                            <source src="assets/img/video3.mp4" type="video/mp4">
-                        </video>
-                        <div class="video-info">
-                            <div class="video-stats">
-                                <span>🤍</span>
-                                <span>▶</span>
-                                <span>💬</span>
-                            </div>
+                </div>
+
+                <!-- Vídeo 3 -->
+                <div class="video-thumbnail">
+                    <video loop muted playsinline class="instagram-video" poster="assets/img/thumbnail3.jpg">
+                        <source src="assets/img/video3.mp4" type="video/mp4">
+                    </video>
+                    <div class="video-info">
+                        <div class="video-stats">
+                            <span>🤍</span>
+                            <span>▶</span>
+                            <span>💬</span>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <footer>
-            <div class="container-footer">
-              
-              <div class="footer-text">
+    </div>
+    <footer>
+        <div class="container-footer">
+
+            <div class="footer-text">
                 <p><strong>Endereço:</strong><br>
-                  Rua Antônio Baldusco - Jd. Montesano,<br>
-                  Itapecerica Da Serra - SP
+                    Rua Antônio Baldusco - Jd. Montesano,<br>
+                    Itapecerica Da Serra - SP
                 </p>
                 <p>@2025 Agende Nail</p>
-              </div>
-              
-              <div class="redes-sociais-footer">
+            </div>
+
+            <div class="redes-sociais-footer">
                 <p>Redes Sociais</p>
                 <div>
-                  <a href="https://api.whatsapp.com/send/?phone=5511978168814&text&type=phone_number&app_absent=0" target="_blank">
-                    <img src="assets/img/whatsapp-icone.png" alt="WhatsApp">
-                  </a>
-                  <a href="https://www.instagram.com/naildesignerjx/" target="_blank">
-                    <img src="assets/img/instagram-icone.png" alt="Instagram">
-                  </a>
-                  <a href="https://www.tiktok.com/@jessikaxaviier?_t=8e9KNyf8geU&_r=1" target="_blank">
-                    <img src="assets/img/tiktok-icone.png" alt="Tik Tok">
-                  </a>
+                    <a href="https://api.whatsapp.com/send/?phone=5511978168814&text&type=phone_number&app_absent=0"
+                        target="_blank">
+                        <img src="assets/img/whatsapp-icone.png" alt="WhatsApp">
+                    </a>
+                    <a href="https://www.instagram.com/naildesignerjx/" target="_blank">
+                        <img src="assets/img/instagram-icone.png" alt="Instagram">
+                    </a>
+                    <a href="https://www.tiktok.com/@jessikaxaviier?_t=8e9KNyf8geU&_r=1" target="_blank">
+                        <img src="assets/img/tiktok-icone.png" alt="Tik Tok">
+                    </a>
                 </div>
-              </div>
-              
             </div>
-          </footer>
-    
+
+        </div>
+    </footer>
+
 
 
 </body>
