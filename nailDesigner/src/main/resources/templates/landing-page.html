@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <meta charset="UTF-8">
@@ -12,7 +12,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
 
 
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" th:href="@{./css/style.css}">
     <title>Agenda Nail | Página Inicial</title>
 </head>
 
@@ -42,7 +42,7 @@
         <div class="linha-seta">
             <div class="linha"></div>
             <a href="#galery">
-                <img src="assets/img/seta.png" alt="Seta para baixo" class="seta">
+                <img src="/img/seta.png" alt="Seta para baixo" class="seta">
             </a>
             <div class="linha"></div>
         </div>
@@ -51,18 +51,18 @@
         </div>
 
         <div class="galery" id="galery">
-            <img class="image-nails" src="assets/img/unha-1.jpg" alt=""></img>
-            <img class="image-nails" src="assets/img/unha-2.jpg" alt=""></img>
-            <img class="image-nails" src="assets/img/unha-3.jpg" alt=""></img>
-            <img class="image-nails" src="assets/img/unha-4.jpg" alt=""></img>
-            <img class="image-nails" src="assets/img/unha-5.jpg" alt=""></img>
-            <img class="image-nails" src="assets/img/unha-6.jpg" alt=""></img>
-            <img class="image-nails" src="assets/img/unha-7.jpg" alt=""></img>
-            <img class="image-nails" src="assets/img/unha-8.jpg" alt=""></img>
-            <img class="image-nails" src="assets/img/unha-9.jpg" alt=""></img>
-            <img class="image-nails" src="assets/img/unha-10.jpg" alt=""></img>
-            <img class="image-nails" src="assets/img/unha-11.jpg" alt=""></img>
-            <img class="image-nails" src="assets/img/unha-12.jpg" alt=""></img>
+            <img class="image-nails" src="/img/unha-1.jpg" alt=""></img>
+            <img class="image-nails" src="/img/unha-2.jpg" alt=""></img>
+            <img class="image-nails" src="/img/unha-3.jpg" alt=""></img>
+            <img class="image-nails" src="/img/unha-4.jpg" alt=""></img>
+            <img class="image-nails" src="/img/unha-5.jpg" alt=""></img>
+            <img class="image-nails" src="/img/unha-6.jpg" alt=""></img>
+            <img class="image-nails" src="/img/unha-7.jpg" alt=""></img>
+            <img class="image-nails" src="/img/unha-8.jpg" alt=""></img>
+            <img class="image-nails" src="/img/unha-9.jpg" alt=""></img>
+            <img class="image-nails" src="/img/unha-10.jpg" alt=""></img>
+            <img class="image-nails" src="/img/unha-11.jpg" alt=""></img>
+            <img class="image-nails" src="/img/unha-12.jpg" alt=""></img>
         </div>
 
         <div class="produtos">
@@ -72,13 +72,13 @@
                 </p>
             </div>
             <div class="imagem-produtos">
-                <img src="assets/img/still-life-beauty-products-spreading-out.jpg" alt="Esmaltes coloridos derramados">
+                <img src="/img/still-life-beauty-products-spreading-out.jpg" alt="Esmaltes coloridos derramados">
             </div>
         </div>
 
         <div class="serviços">
             <div class="imagem-produtos">
-                <img src="assets/img/close-up-manicurist-using-nail-polish.jpg" alt="">
+                <img src="/img/close-up-manicurist-using-nail-polish.jpg" alt="">
             </div>
             <div class="texto-produtos">
                 <h2>Serviços</h2>
@@ -118,7 +118,7 @@
         <div class="instagram-profile">
             <div class="profile-header">
                 
-                <img src="assets/img/unha-7.jpg" alt="Profile picture" class="profile-pic">
+                <img src="/img/unha-7.jpg" alt="Profile picture" class="profile-pic">
                 <div class="profile-info">
                 
                     <p class="username">@naildesignerjx</p>
@@ -143,8 +143,8 @@
             <div class="video-section">
                 <!-- Vídeo 1 -->
                 <div class="video-thumbnail">
-                    <video loop muted playsinline class="instagram-video" poster="assets/img/thumbnail1.jpg">
-                        <source src="assets/img/video1.mp4" type="video/mp4">
+                    <video loop muted playsinline class="instagram-video" poster="/img/thumbnail1.jpg">
+                        <source src="/img/video1.mp4" type="video/mp4">
                     </video>
                     <div class="video-info">
                         <div class="video-stats">
@@ -157,8 +157,8 @@
 
                 <!-- Vídeo 2 -->
                 <div class="video-thumbnail">
-                    <video loop muted playsinline class="instagram-video" poster="assets/img/thumbnail2.jpg">
-                        <source src="assets/img/video2.mp4" type="video/mp4">
+                    <video loop muted playsinline class="instagram-video" poster="/img/thumbnail2.jpg">
+                        <source src="/img/video2.mp4" type="video/mp4">
                     </video>
                     <div class="video-info">
                         <div class="video-stats">
@@ -171,8 +171,8 @@
 
                 <!-- Vídeo 3 -->
                 <div class="video-thumbnail">
-                    <video loop muted playsinline class="instagram-video" poster="assets/img/thumbnail3.jpg">
-                        <source src="assets/img/video3.mp4" type="video/mp4">
+                    <video loop muted playsinline class="instagram-video" poster="/img/thumbnail3.jpg">
+                        <source src="/img/video3.mp4" type="video/mp4">
                     </video>
                     <div class="video-info">
                         <div class="video-stats">
@@ -201,13 +201,13 @@
                 <div>
                     <a href="https://api.whatsapp.com/send/?phone=5511978168814&text&type=phone_number&app_absent=0"
                         target="_blank">
-                        <img src="assets/img/whatsapp-icone.png" alt="WhatsApp">
+                        <img src="/img/whatsapp-icone.png" alt="WhatsApp">
                     </a>
                     <a href="https://www.instagram.com/naildesignerjx/" target="_blank">
-                        <img src="assets/img/instagram-icone.png" alt="Instagram">
+                        <img src="/img/instagram-icone.png" alt="Instagram">
                     </a>
                     <a href="https://www.tiktok.com/@jessikaxaviier?_t=8e9KNyf8geU&_r=1" target="_blank">
-                        <img src="assets/img/tiktok-icone.png" alt="Tik Tok">
+                        <img src="/img/tiktok-icone.png" alt="Tik Tok">
                     </a>
                 </div>
             </div>

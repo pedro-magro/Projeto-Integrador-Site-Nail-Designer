@@ -8,6 +8,6 @@ public class indexController {
 
 	@RequestMapping("/")
 	public String inicio() {
-		return "index";
+		return "landing-page";
 	}
 }
