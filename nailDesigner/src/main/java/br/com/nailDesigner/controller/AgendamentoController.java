@@ -12,6 +12,7 @@ import br.com.nailDesigner.repositories.AgendamentoRepository;
 import br.com.nailDesigner.repositories.UsuarioRepository;
 import br.com.nailDesigner.services.EmailService;
 import jakarta.validation.constraints.Email;
+import java.util.stream.*;
 
 @Controller("/agendamento")
 public class AgendamentoController {
@@ -27,7 +28,9 @@ public class AgendamentoController {
 	private String salvar(@ModelAttribute Agendamento agendamento, Authentication auth) {
 		Usuario cliente = usuarioRepo.findByEmail(auth.getName()).orElseThrow();
 		agendamento.setCliente(cliente);
-		agendamentoRepo.save(agendamento);
+		Agendamento salvo = agendamentoRepo.save(agendamento);
+		
+		
 		
 		//Email para o Cliente
 		emailService.enviarEmail(cliente.getEmail(),
@@ -35,7 +38,7 @@ public class AgendamentoController {
 		+ agendamento.getData() + " às " + agendamento.getHora() + ".");
 		
 		//Email para cada funcionario 
-		for(Usuario funcionario: agendamento.getFuncionarios()) {
+		for(Usuario funcionario: agendamento.getFuncionarios()){
 			emailService.enviarEmail(funcionario.getEmail(), 
 			"Novo Agendamento Recebido",
 			"Olá " + funcionario.getNome() + ", você foi agendado para o dia " + 
