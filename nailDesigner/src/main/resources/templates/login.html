@@ -7,16 +7,18 @@
     <meta name="author" content="Vinícius Roodrigues Xavier, Pedro Henrique Magro, Felipe Augusto Soares">
     <meta name="description" content="Site Agende Nail que faz agendamentos de unhas">
     <meta name="keywords" content="landing page, agendamentos de unhas, nail designer">
-    <link href="https://fonts.googleapis.com/css2?family=Hedvig+Letters+Serif:opsz@12..24&display=swap"
+    <link rel="stylesheet" href="/nailDesigner/src/main/resources/static/css/style_cadastro_login.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Hedvig+Letters+Serif:opsz@12..24&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
-    <title>Agenda Nail | Fazer Login</title>
+    <title>Agenda Nail | Login</title>
 </head>
 
 <body>
     <header>
         <div class="container">
-            <div class="logo"></div>
+            <img src="/nailDesigner/src/main/resources/static/img/logo-preto-agende-nail.png" class="logo"></img>
             <nav class="menu" role="navigation">
                 <div class="menu-page"><a href="landing-page.html">Início</a></div>
                 <div class="menu-page"><a href="servicos.html">Serviços</a></div>
@@ -24,10 +26,44 @@
                 <div class="menu-page"><a href="sobre.html">Sobre mim</a></div>
             </nav>
             <div>
-                <div class="foto-perfil"></div>
+                <img src="/nailDesigner/src/main/resources/static/img/foto-perfil.png" class="foto-perfil"></img>
             </div>
         </div>
     </header>
+    <div class="container-form">
+        <img src="/nailDesigner/src/main/resources/static/img/logo-preto-agende-nail.png" class="logo-hero"></img>
+
+        <form action="">
+            <h1>Login</h1>
+            <div class="form-container">
+                <label for="form-data">Email</label>
+                <input id="form-data" type="email" placeholder="email@gmail.com">
+            </div>
+            <div class="form-container">
+                <label for="form-hora">Senha</label>
+                <input id="form-hora" type="password" placeholder="********">
+            </div>
+            <div class="password-config">
+                <div class="container-lembrar-login">
+                    <input id="password-checkbox" type="checkbox">
+                    <label for="">Lembrar de mim?</label>
+                </div>
+                <div class="container-esqueci-senha">
+                    <a href="#">Esqueci a senha</a>
+                </div>
+            </div>
+
+            <div class="btn">
+                <button id="btn-agendar">Entrar</button>
+            </div>
+            <div class="container-inscreva-se">
+                <span>Não tem uma conta? <a href="inscreva-se.html">Inscreva-se</a></span>
+            </div>
+        </form>
+        <br>
+        <br>
+    </div>
+
 </body>
 
 </html>
