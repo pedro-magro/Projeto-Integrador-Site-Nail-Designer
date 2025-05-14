@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Painel de Agendamentos</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <button onclick="voltar()">← Voltar para o site</button>
+      <h1>Painel de Agendamentos</h1>
+    </header>
+
+    <section class="summary-cards">
+      <div class="card"><span>Agendamentos Hoje</span><strong id="today-count">0</strong></div>
+      <div class="card"><span>Pendentes</span><strong id="pending-count">0</strong></div>
+      <div class="card"><span>Confirmados</span><strong id="confirmed-count">0</strong></div>
+      <div class="card"><span>Próximo Agendamento</span><div id="next-appointment">---</div></div>
+    </section>
+
+    <section class="filters">
+      <input type="text" id="search" placeholder="Buscar cliente ou serviço..." />
+      <select id="status-filter">
+        <option value="all">Todos</option>
+        <option value="pending">Pendentes</option>
+        <option value="confirmed">Confirmados</option>
+        <option value="completed">Concluídos</option>
+        <option value="cancelled">Cancelados</option>
+      </select>
+    </section>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Cliente</th>
+          <th>Serviço</th>
+          <th>Data e Hora</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody id="appointment-table">
+        <!-- Linhas preenchidas pelo JavaScript -->
+      </tbody>
+    </table>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
