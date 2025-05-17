@@ -1,0 +1,204 @@
+@import url('https://fonts.googleapis.com/css2?family=Hedvig+Letters+Serif:opsz@12..24&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+
+* {
+  margin: 0 auto;
+  padding: 0;
+  box-sizing: border-box;
+  max-width: 2048px;
+  max-height: 1024px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #e0ccff;
+  background-repeat: no-repeat;
+  background-attachment: fixed; 
+  min-height: 100vh; 
+}
+
+div.container {
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center; 
+  flex-wrap: nowrap;
+  gap: 20px;
+  background-color: transparent;
+  position: relative;
+}
+
+.logo {
+  height: 100px;
+  width: 100px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  margin-left: 10px;
+}
+
+
+.menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+}
+
+.menu-page {
+  display: flex;
+  gap: 25px;
+}
+
+.menu-page a {
+  position: relative;
+  text-decoration: none;
+  font-size: 22px;
+  color: darkslateblue;
+  font-family: "Hedvig Letters Serif", serif;
+  transition: color 0.3s ease;
+}
+
+.menu-page a:hover {
+  color: #875ea5;
+}
+
+.menu-page a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -5%;
+  background-color: #875ea5;
+  transition: width 0.3s ease;
+}
+
+.menu-page a:hover::after {
+  width: 30%;
+}
+
+.foto-perfil {
+  height: 65px;
+  width: 65px;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 50%;
+  transition: transform 0.5s ease;
+  margin-right: 10px;
+}
+
+.foto-perfil:hover {
+  transform: scale(1.1);
+}
+
+.servicos {
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.titulo-servicos {
+  text-align: center;
+  margin-bottom: 36px;
+  font-size: 40px;
+  color: darkslateblue;
+}
+
+.galeria-servicos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  padding: 0 20px;
+}
+
+.card-servico {
+  background-color: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(138, 43, 226, 0.2);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-servico img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.card-servico h2 {
+  margin: 15px 0 10px;
+  color: #5d3a8b;
+  font-size: 20px;
+}
+
+.card-servico p {
+  padding: 0 15px 20px;
+  color: #333;
+  font-size: 16px;
+}
+
+.card-servico:hover {
+  transform: scale(1.03);
+  box-shadow: 0 5px 20px rgba(138, 43, 226, 0.3);
+}
+
+    /* Fundo escurecido */
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 999;
+    }
+
+    /* Janela do modal */
+    .modal {
+      background: white;
+      padding: 20px 30px;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+      text-align: center;
+      max-width: 400px;
+    }
+
+    .modal h2 {
+      margin-top: 0;
+    }
+
+    .modal-buttons {
+      margin-top: 20px;
+      display: flex;
+      justify-content: space-around;
+    }
+
+    .modal-buttons button {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    .btn-cancelar {
+      background: #ccc;
+      outline: none;
+    }
+
+    .btn-confirmar {
+      background: #28a745;
+      color: white;
+      outline: none;
+    }

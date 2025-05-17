@@ -7,16 +7,18 @@
     <meta name="author" content="Vinícius Roodrigues Xavier, Pedro Henrique Magro, Felipe Augusto Soares">
     <meta name="description" content="Site Agende Nail que faz agendamentos de unhas">
     <meta name="keywords" content="landing page, agendamentos de unhas, nail designer">
-    <link href="https://fonts.googleapis.com/css2?family=Hedvig+Letters+Serif:opsz@12..24&display=swap"
+    <link rel="stylesheet" href="/nailDesigner/src/main/resources/static/css/style_cadastro_login.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Hedvig+Letters+Serif:opsz@12..24&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
-    <title>Agenda Nail | Inscreva-se</title>
+    <title>Agenda Nail | Cadastro</title>
 </head>
 
 <body>
     <header>
         <div class="container">
-            <div class="logo"></div>
+            <img th:src="@{/assets/img/logo-preto-agende-nail.png}" class="logo">
             <nav class="menu" role="navigation">
                 <div class="menu-page"><a href="landing-page.html">Início</a></div>
                 <div class="menu-page"><a href="servicos.html">Serviços</a></div>
@@ -24,10 +26,45 @@
                 <div class="menu-page"><a href="sobre.html">Sobre mim</a></div>
             </nav>
             <div>
-                <div class="foto-perfil"></div>
+                <img th:src="@{/assets/img/foto-perfil.png}" class="foto-perfil">
             </div>
         </div>
     </header>
+
+    <div class="container-form">
+
+        <form th:action="@{/cadastro_copy}" th:object="${usuario}" method="post">
+            <h1>Inscreva-se</h1>
+            <div th:if="${mensagem}">
+                <p th:text="${mensagem}" th:class="${mensagemClasse}" style="text-align: center;"></p>
+            </div>
+            <br>
+            <div class="form-container">
+                <label for="form-data">Nome</label>
+                <input id="form-data" type="text" placeholder="Nome completo" th:field="*{username}" required />
+            </div>
+            <div class="form-container">
+                <label for="form-data">Telefone</label>
+                <input id="form-data" type="tel" placeholder="(DDD) XXXXX-XXXX" th:field="*{telefone}" required />
+            </div>
+            <div class="form-container">
+                <label for="form-data">Email</label>
+                <input id="form-data" type="email" placeholder="email@gmail.com" th:field="*{email}" required />
+            </div>
+            <div class="form-container">
+                <label for="form-hora">Senha</label>
+                <input id="form-hora" type="password" placeholder="********" th:field="*{senha}" required />
+            </div>
+
+            <div class="btn">
+                <button id="btn-agendar" type="submit">Cadastrar</button>
+            </div>
+            <div class="container-inscreva-se">
+                <span>Já tem uma conta? <a th:href="@{/login}">Login</a></span>
+            </div>
+        </form>
+    </div>
+    <br>
 </body>
 
 </html>

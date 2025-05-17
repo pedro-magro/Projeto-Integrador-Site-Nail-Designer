@@ -1,0 +1,204 @@
+* {
+  margin: 0 auto;
+  padding: 0;
+  box-sizing: border-box;
+  max-width: 2048px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(to bottom, #e0ccff, #c9b6ff, #bb9ce9);
+  background-repeat: no-repeat;
+  background-attachment: fixed; /* Evita repetição em telas longas */
+  min-height: 100vh; /* Garante que o gradiente cubra toda a tela */
+}
+
+/* Header Container */
+div.container {
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* Alinha verticalmente os elementos */
+  flex-wrap: nowrap;
+  gap: 20px;
+  background-color: transparent;
+  position: relative;
+}
+
+/* Logo */
+.logo {
+  height: 100px;
+  width: 100px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  margin-left: 10px;
+}
+
+/* Menu */
+.menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+}
+
+.menu-page {
+  display: flex;
+  gap: 25px;
+}
+
+.menu-page a {
+  position: relative;
+  text-decoration: none;
+  font-size: 22px;
+  color: darkslateblue;
+  font-family: "Hedvig Letters Serif", serif;
+  transition: color 0.3s ease;
+}
+
+.menu-page a:hover {
+  color: #875ea5;
+}
+
+.menu-page a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -5%;
+  background-color: #875ea5;
+  transition: width 0.3s ease;
+}
+
+.menu-page a:hover::after {
+  width: 30%;
+}
+
+/* Foto de Perfil */
+.foto-perfil {
+  height: 65px;
+  width: 65px;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 50%;
+  transition: transform 0.5s ease;
+  margin-right: 10px;
+}
+
+.foto-perfil:hover {
+  transform: scale(1.1);
+}
+
+/* Formulário */
+.container-form {
+  display: flex;
+  margin-top: 100px;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px;
+  border-radius: 12px;
+  background: transparent;
+}
+
+h1 {
+  font-size: 60px;
+  font-family: 'Playfair Display', serif;
+  margin-bottom: 30px;
+  color: #131313;
+  font-weight: 700px;
+  text-align: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  max-width: 320px;
+}
+
+label {
+  font-size: 18px;
+  color: #252525;
+  text-align: left;
+  font-weight: 200px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-family: 'Playfair Display', serif;
+}
+
+input,
+select {
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  background-color: #f5f5f5;
+  color: #333;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  width: 300px;
+}
+
+input::placeholder {
+  color: #aaa;
+}
+
+.btn {
+  text-align: left;
+  margin-left: 0;
+}
+
+button {
+  padding: 12px;
+  font-size: 22px;
+  background-color: #5b2bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-family: "Hedvig Letters Serif", serif; 
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  width: 300px;  
+}
+
+button:hover {
+  background-color: #4a23d4;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+  }
+
+  .logo {
+    margin: 0 auto;
+  }
+
+  .menu {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .foto-perfil {
+    margin-top: 10px;
+  }
+
+  .menu-page {
+    flex-direction: column;
+  }
+}

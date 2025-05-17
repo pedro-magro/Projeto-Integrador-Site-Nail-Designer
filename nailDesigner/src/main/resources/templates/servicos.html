@@ -9,14 +9,14 @@
     <meta name="keywords" content="landing page, agendamentos de unhas, nail designer">
     <link href="https://fonts.googleapis.com/css2?family=Hedvig+Letters+Serif:opsz@12..24&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="/nailDesigner/src/main/resources/static/css/style_servicos.css">
     <title>Agenda Nail | Serviços</title>
 </head>
 
 <body>
     <header>
         <div class="container">
-            <div class="logo"></div>
+            <img src="/Projeto-Integrador-Site-Nail-Designer/nailDesigner/src/main/resources/static/img/logo-preto-agende-nail.png" class="logo"></img>
             <nav class="menu" role="navigation">
                 <div class="menu-page"><a href="landing-page.html">Início</a></div>
                 <div class="menu-page"><a href="servicos.html">Serviços</a></div>
@@ -24,10 +24,55 @@
                 <div class="menu-page"><a href="sobre.html">Sobre mim</a></div>
             </nav>
             <div>
-                <div class="foto-perfil"></div>
+                <img src="/Projeto-Integrador-Site-Nail-Designer/nailDesigner/src/main/resources/static/img/foto-perfil.png" class="foto-perfil"></img>
             </div>
         </div>
     </header>
+
+    <main class="servicos">
+        <h1 class="titulo-servicos">Nossos Serviços</h1>
+        <section class="galeria-servicos">
+
+            <div onclick="abrirModal()" class="card-servico">
+                <img src="/Projeto-Integrador-Site-Nail-Designer/nailDesigner/src/main/resources/static/img/unha-1.jpg" alt="Unhas em Gel">
+                <h2>Unhas em Gel</h2>
+                <p>Durabilidade, beleza e acabamento impecável com alongamento em gel.</p>
+            </div>
+
+            <div onclick="abrirModal()" class="card-servico">
+                <img src="/Projeto-Integrador-Site-Nail-Designer/nailDesigner/src/main/resources/static/img/unha-2.jpg" alt="Spa das Mãos">
+                <h2>Spa das Mãos</h2>
+                <p>Tratamento completo para mãos hidratadas e rejuvenescidas.</p>
+            </div>
+
+            <div onclick="abrirModal()" class="card-servico">
+                <img src="/Projeto-Integrador-Site-Nail-Designer/nailDesigner/src/main/resources/static/img/unha-3.jpg" alt="Unhas Decoradas">
+                <h2>Unhas Decoradas</h2>
+                <p>Design exclusivo com desenhos artísticos feitos à mão.</p>
+            </div>
+
+            <div onclick="abrirModal()" class="card-servico">
+                <img src="/Projeto-Integrador-Site-Nail-Designer/nailDesigner/src/main/resources/static/img/unha-4.jpg" alt="Remoção de Gel">
+                <h2>Remoção de Gel</h2>
+                <p>Remoção segura e profissional de alongamentos anteriores.</p>
+            </div>
+
+            <!-- modal-->
+            <div class="overlay" id="confirmacaoModal">
+                <div class="modal">
+                    <h2>Serviço</h2>
+                    <p>Deseja realizar um agendamento para esse serviço?</p>
+                    <div class="modal-buttons">
+                        <button class="btn-cancelar" onclick="fecharModal()">Cancelar</button>
+                        <button class="btn-confirmar" onclick="confirmarAcao()">Confirmar</button>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+    </main>
+
+<script src="/nailDesigner/src/main/resources/static/js/script_servicos.js"></script>
 </body>
 
 </html>
