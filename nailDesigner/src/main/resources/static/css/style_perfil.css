@@ -1,0 +1,261 @@
+* {
+  margin: 0 auto;
+  padding: 0;
+  box-sizing: border-box;
+  max-width: 2048px;
+  max-height: 1024px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #e0ccff;
+  background-repeat: no-repeat;
+  background-attachment: fixed; 
+  min-height: 100vh; 
+}
+
+div.container {
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center; 
+  flex-wrap: nowrap;
+  gap: 20px;
+  background-color: transparent;
+  position: relative;
+}
+
+.logo {
+  height: 100px;
+  width: 100px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  margin-left: 10px;
+}
+
+
+.menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+}
+
+.menu-page {
+  display: flex;
+  gap: 25px;
+}
+
+.menu-page a {
+  position: relative;
+  text-decoration: none;
+  font-size: 22px;
+  color: darkslateblue;
+  font-family: "Hedvig Letters Serif", serif;
+  transition: color 0.3s ease;
+}
+
+.menu-page a:hover {
+  color: #875ea5;
+}
+
+.menu-page a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -5%;
+  background-color: #875ea5;
+  transition: width 0.3s ease;
+}
+
+.menu-page a:hover::after {
+  width: 30%;
+}
+
+.foto-perfil {
+  height: 65px;
+  width: 65px;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 50%;
+  transition: transform 0.5s ease;
+  margin-right: 10px;
+}
+
+.foto-perfil:hover {
+  transform: scale(1.1);
+}
+
+
+.footer {
+  background-color: #d9c3f2;
+  padding: 40px 20px 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #3c2c54;
+  margin-top: 40px;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #b79ed1;
+}
+
+.footer-logo img {
+  height: 80px;
+}
+
+.footer-info,
+.footer-contato {
+  flex: 1;
+  min-width: 250px;
+}
+
+.footer-info p,
+.footer-contato p {
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+.footer-contato a {
+  color: #5e3f8c;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-contato a:hover {
+  color: #875ea5;
+  text-decoration: underline;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 15px;
+  font-size: 14px;
+  color: #5a4a75;
+}
+/* Página de perfil */
+.perfil {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+  padding-top: 120px;
+  background-color: #e0ccff;
+  min-height: auto;
+}
+
+.perfil-container {
+  text-align: center;
+  width: 100%;
+  max-width: 700px;
+}
+
+/* Imagem e botão de editar */
+.foto-perfil-editavel {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.foto-perfil-editavel img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  background-color: #ccc;
+  display: block;
+  margin: 0 auto 10px auto;
+}
+
+.botao-editar-foto {
+  display: inline-block;
+  padding: 6px 12px;
+  background-color: #fff;
+  color: #5d3a8b;
+  border: 1px solid #5d3a8b;
+  border-radius: 8px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.3s ease, color 0.3s ease;
+  font-family: "Hedvig Letters Serif", serif;
+}
+
+.botao-editar-foto:hover {
+  background-color: #5d3a8b;
+  color: #fff;
+}
+
+/* Formulário de perfil */
+.formulario-perfil {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.linha-inputs {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.campo {
+  flex: 1;
+  min-width: 250px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.campo label {
+  font-weight: bold;
+  color: #3c2c54;
+  margin-bottom: 5px;
+  font-family: "Hedvig Letters Serif", serif;
+  margin-left: 0;
+}
+
+.campo input {
+  width: 100%;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  background-color: #fff;
+  color: #333;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.05);
+}
+
+/* Botão editar */
+.botao-editar {
+  margin-top: 20px;
+  padding: 12px 24px;
+  background-color: #5d3a8b;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  font-family: "Hedvig Letters Serif", serif;
+}
+
+.botao-editar:hover {
+  background-color: #875ea5;
+}

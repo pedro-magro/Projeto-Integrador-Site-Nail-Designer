@@ -105,7 +105,7 @@ div.container {
   margin-top: 100px;
   flex-direction: column;
   align-items: center;
-  padding: 40px;
+  padding: 30px;
   border-radius: 12px;
   background: transparent;
 }
@@ -114,7 +114,7 @@ h1 {
   font-size: 60px;
   font-family: 'Playfair Display', serif;
   margin-bottom: 30px;
-  color: #131313;
+  color: darkslateblue;
   font-weight: 700px;
   text-align: center;
 }
@@ -129,7 +129,7 @@ form {
 
 label {
   font-size: 18px;
-  color: #252525;
+  color:#3c2c54;
   text-align: left;
   font-weight: 200px;
   margin-top: 10px;
@@ -161,7 +161,7 @@ input::placeholder {
 button {
   padding: 12px;
   font-size: 22px;
-  background-color: #5b2bff;
+  background-color: #5d3a8b;
   color: white;
   border: none;
   border-radius: 8px;
@@ -173,7 +173,7 @@ button {
 }
 
 button:hover {
-  background-color: #4a23d4;
+  background-color:  #875ea5;
 }
 
 /* Responsivo */
