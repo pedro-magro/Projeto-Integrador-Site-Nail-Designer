@@ -1,14 +1,16 @@
-package com.site_agendamento_provisorio.demo;
+package br.com.nailDesigner;
+
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.userdetails.User;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
-import com.site_agendamento_provisorio.demo.model.Usuario;
-import com.site_agendamento_provisorio.demo.repository.UsuarioRepository;
+import br.com.nailDesigner.models.Usuario;
+import br.com.nailDesigner.repositories.UsuarioRepository;
 
 @Service
 public class MeuUserDetailsService implements UserDetailsService {
@@ -18,15 +20,13 @@ public class MeuUserDetailsService implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
-        Usuario usuario = usuarioRepository.findByEmail(email);
-        if (usuario == null) {
-            throw new UsernameNotFoundException("Usuário não encontrado");
-        }
+        Usuario usuario = usuarioRepository.findByEmail(email)
+        		.orElseThrow(() -> new UsernameNotFoundException("Usuário não encontrado"));
 
-        return User.builder()
-                .username(usuario.getEmail())
-                .password(usuario.getSenha()) // Deve estar criptografada com BCrypt
-                .roles("USER")
-                .build();
+        return new org.springframework.security.core.userdetails.User(
+                usuario.getEmail(),
+                usuario.getSenha(), // senha deve estar criptografada
+                List.of(new SimpleGrantedAuthority("ROLE_" + usuario.getRole().name()))
+        );
     }
 }

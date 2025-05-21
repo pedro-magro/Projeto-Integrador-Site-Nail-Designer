@@ -19,7 +19,7 @@ public class Usuario {
 	
 	
 	private String nome;
-	private String celular;
+	private String telefone;
 	private String senha;
 	private Date createdAt;
 	private String cpf; // apenas para funcionarios
@@ -64,12 +64,12 @@ public class Usuario {
 		this.nome = nome;
 	}
 
-	public String getCelular() {
-		return celular;
+	public String getTelefone() {
+		return telefone;
 	}
 
-	public void setCelular(String celular) {
-		this.celular = celular;
+	public void setTelefone(String celular) {
+		this.telefone = celular;
 	}
 
 	public String getSenha() {

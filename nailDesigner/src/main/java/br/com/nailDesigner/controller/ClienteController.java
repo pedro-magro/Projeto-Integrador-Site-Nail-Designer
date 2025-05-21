@@ -10,6 +10,9 @@ import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+
+import br.com.nailDesigner.dtos.AgendamentoDTO;
+import br.com.nailDesigner.dtos.UsuarioDTO;
 import br.com.nailDesigner.models.*;
 import br.com.nailDesigner.repositories.UsuarioRepository;
 
@@ -23,15 +26,26 @@ public class ClienteController {
 	
 	@Autowired 
 	private AgendamentoService agendamentoService;
-
-    @GetMapping("/dashboard")
-    public String dashboard(Model model, Authentication authentication) {
-    	String email = authentication.getName();
-    	Usuario cliente = usuarioService.buscarPorEmail(email);
-    	List<Agendamento> agendamentos = agendamentoService.listarPorCliente(cliente);
-    	model.addAttribute("agendamentos", agendamentos);
-    	return "cliente/dashboard";
+	
+	@GetMapping("/perfil")
+    public String perfil(Model model, Authentication authentication) {
+        model.addAttribute("usuario", usuarioService.buscarPorEmail(authentication.getName()));
+        return "cliente/perfil";
+    }
+	
+	@PostMapping("/atualizar")
+    public String atualizar(@ModelAttribute UsuarioDTO dto, Authentication authentication) {
+        dto.setEmail(authentication.getName());
+        usuarioService.atualizar(dto);
+        return "redirect:/cliente/perfil";
     }
     
+    @GetMapping("/minhas-reservas")
+    public String listarCliente(Model model, Authentication auth) {
+        String email = auth.getName(); // e-mail do cliente autenticado
+        List<AgendamentoDTO> agendamentos = agendamentoService.listarPorClienteEmail(email); // Corrigido
+        model.addAttribute("agendamentos", agendamentos);
+        return "agendamento/listar-cliente";
+    }
 
 }

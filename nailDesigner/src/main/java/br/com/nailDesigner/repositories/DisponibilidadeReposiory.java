@@ -10,5 +10,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface DisponibilidadeReposiory extends JpaRepository<Disponibilidade, Long> {
 	List<Disponibilidade> findByFuncionarioAndDiaSemana(Usuario funcionario, DayOfWeek diaSemana);
+	List<Disponibilidade> findByFuncionario(Usuario funcionario);
 
 }

@@ -10,7 +10,7 @@ public class Servico {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long codigo;
+	private long id;
 	
 	@NotEmpty
 	private String nome;
@@ -19,20 +19,21 @@ public class Servico {
 	private String descricao;
 	
 	@NotEmpty
-	private String preco;
+	private Double preco;
 	
+	@ElementCollection
 	private List<String> imagens; //Url das imagens 
 	
 	
 	//Getters & Setters
 
 	
-	public long getCodigo() {
-		return codigo;
+	public long getId() {
+		return id;
 	}
 
-	public void setCodigo(long codigo) {
-		this.codigo = codigo;
+	public void setId(long codigo) {
+		this.id = codigo;
 	}
 
 	public String getNome() {
@@ -51,11 +52,11 @@ public class Servico {
 		this.descricao = descricao;
 	}
 
-	public String getPreco() {
+	public Double getPreco() {
 		return preco;
 	}
 
-	public void setPreco(String preco) {
+	public void setPreco(Double preco) {
 		this.preco = preco;
 	}
 

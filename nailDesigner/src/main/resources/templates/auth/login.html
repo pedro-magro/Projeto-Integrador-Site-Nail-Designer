@@ -7,18 +7,18 @@
     <meta name="author" content="Vinícius Roodrigues Xavier, Pedro Henrique Magro, Felipe Augusto Soares">
     <meta name="description" content="Site Agende Nail que faz agendamentos de unhas">
     <meta name="keywords" content="landing page, agendamentos de unhas, nail designer">
-    <link rel="stylesheet" href="/nailDesigner/src/main/resources/static/css/style_cadastro_login.css">
+    <link rel="stylesheet" th:href="@{/css/style_cadastro_login.css}">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     <link
         href="https://fonts.googleapis.com/css2?family=Hedvig+Letters+Serif:opsz@12..24&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
         rel="stylesheet">
-    <title>Agenda Nail | Cadastro</title>
+    <title>Agenda Nail | Login</title>
 </head>
 
 <body>
     <header>
         <div class="container">
-            <img th:src="@{/assets/img/logo-preto-agende-nail.png}" class="logo">
+            <img src="/nailDesigner/src/main/resources/static/img/logo-preto-agende-nail.png" class="logo"></img>
             <nav class="menu" role="navigation">
                 <div class="menu-page"><a href="landing-page.html">Início</a></div>
                 <div class="menu-page"><a href="servicos.html">Serviços</a></div>
@@ -26,45 +26,43 @@
                 <div class="menu-page"><a href="sobre.html">Sobre mim</a></div>
             </nav>
             <a href="edicao_perfil.html">
-                <img th:src="@{/assets/img/foto-perfil.png}" class="foto-perfil">
+                <img src="/nailDesigner/src/main/resources/static/img/foto-perfil.png" class="foto-perfil"></img>
             </a>
         </div>
     </header>
-
     <div class="container-form">
 
-        <form th:action="@{/cadastro_copy}" th:object="${usuario}" method="post">
-            <h1>Inscreva-se</h1>
-            <div th:if="${mensagem}">
-                <p th:text="${mensagem}" th:class="${mensagemClasse}" style="text-align: center;"></p>
-            </div>
-            <br>
-            <div class="form-container">
-                <label for="form-data">Nome</label>
-                <input id="form-data" type="text" placeholder="Nome completo" th:field="*{username}" required />
-            </div>
-            <div class="form-container">
-                <label for="form-data">Telefone</label>
-                <input id="form-data" type="tel" placeholder="(DDD) XXXXX-XXXX" th:field="*{telefone}" required />
-            </div>
+        <form action="">
+            <h1>Login</h1>
             <div class="form-container">
                 <label for="form-data">Email</label>
-                <input id="form-data" type="email" placeholder="email@gmail.com" th:field="*{email}" required />
+                <input id="form-data" type="email" placeholder="email@gmail.com">
             </div>
             <div class="form-container">
                 <label for="form-hora">Senha</label>
-                <input id="form-hora" type="password" placeholder="********" th:field="*{senha}" required />
+                <input id="form-hora" type="password" placeholder="********">
+            </div>
+            <div class="password-config">
+                <div class="container-lembrar-login">
+                    <input id="password-checkbox" type="checkbox">
+                    <label for="">Lembrar de mim?</label>
+                </div>
+                <div class="container-esqueci-senha">
+                    <a href="#">Esqueci a senha</a>
+                </div>
             </div>
 
             <div class="btn">
-                <button id="btn-agendar" type="submit">Cadastrar</button>
+                <button id="btn-agendar">Entrar</button>
             </div>
             <div class="container-inscreva-se">
-                <span>Já tem uma conta? <a th:href="@{/login}">Login</a></span>
+                <span>Não tem uma conta? <a href="inscreva-se.html">Inscreva-se</a></span>
             </div>
         </form>
+        <br>
+        <br>
     </div>
-    <br>
+
 </body>
 
 </html>
