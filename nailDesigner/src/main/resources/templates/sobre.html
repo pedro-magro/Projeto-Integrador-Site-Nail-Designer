@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
@@ -7,31 +7,64 @@
     <meta name="author" content="Vinícius Roodrigues Xavier, Pedro Henrique Magro, Felipe Augusto Soares">
     <meta name="description" content="Site Agende Nail que faz agendamentos de unhas">
     <meta name="keywords" content="landing page, agendamentos de unhas, nail designer">
-    <link rel="stylesheet" href="/nailDesigner/src/main/resources/static/css/style_sobre_mim.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Hedvig+Letters+Serif:opsz@12..24&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="/nailDesigner/src/main/resources/static/css/style_sobre_mim.css">
     <title>Agenda Nail | Sobre mim</title>
 </head>
 
 <body>
     <header>
-        <div class="container">
-            <img src="/nailDesigner/src/main/resources/static/img/logo-preto-agende-nail.png" class="logo"></img>
+        <div class="container header-desktop">
+            <img src="/nailDesigner/src/main/resources/static/img/logo-preto-agende-nail.png" class="logo" alt="Logo Agende Nail">
             <nav class="menu" role="navigation">
                 <div class="menu-page"><a href="landing-page.html">Início</a></div>
                 <div class="menu-page"><a href="servicos.html">Serviços</a></div>
                 <div class="menu-page"><a href="#">Contato</a></div>
                 <div class="menu-page"><a href="sobre.html">Sobre mim</a></div>
             </nav>
-            <a href="edicao_perfil.html">
-                <img src="/nailDesigner/src/main/resources/static/img/foto-perfil.png" class="foto-perfil"></img>
+            <a href="edicao_perfil.html" class="profile-icon-desktop">
+                <img src="/nailDesigner/src/main/resources/static/img/foto-perfil.png" class="foto-perfil" alt="Foto de perfil do usuário">
             </a>
         </div>
+
+        <div class="header-mobile">
+            <i class="fas fa-bars hamburger-icon" id="hamburger-toggle"></i>
+            <img src="/nailDesigner/src/main/resources/static/img/logo-preto-agende-nail.png" class="logo-mobile" alt="Logo Agende Nail Mobile">
+            <div class="profile-icon-mobile">
+                <a href="edicao_perfil.html">
+                    <img src="/nailDesigner/src/main/resources/static/img/foto-perfil.png" class="foto-perfil-mobile" alt="Foto de perfil do usuário (Mobile)">
+                </a>
+            </div>
+        </div>
     </header>
+
+    <div class="off-canvas-menu" id="off-canvas-menu">
+        <div class="off-canvas-header">
+            <img src="/nailDesigner/src/main/resources/static/img/logo-preto-agende-nail.png" class="logo-off-canvas" alt="Logo Agende Nail Off-Canvas">
+            <i class="fas fa-times close-btn" id="off-canvas-close"></i>
+        </div>
+        <div class="off-canvas-profile-info">
+            <img src="/nailDesigner/src/main/resources/static/img/foto-perfil.png" class="foto-perfil-off-canvas" alt="Foto de perfil Off-Canvas">
+            <span>Olá, Usuário!</span>
+        </div>
+        <ul>
+            <li><a href="landing-page.html"><i class="fas fa-home"></i> Início</a></li>
+            <li><a href="servicos.html"><i class="fas fa-concierge-bell"></i> Serviços</a></li>
+            <li><a href="#">Contato</a></li>
+            <li><a href="sobre.html"><i class="fas fa-info-circle"></i> Sobre mim</a></li>
+            <li><a href="edicao_perfil.html"><i class="fas fa-user-circle"></i> Meu Perfil</a></li>
+            <li><a href="#"><i class="fas fa-sign-out-alt"></i> Sair</a></li>
+        </ul>
+    </div>
+
+    <div class="overlay" id="menu-overlay"></div>
 
     <main class="sobre-container">
         <section class="sobre-conteudo">
             <div class="sobre-imagem">
-                <img src="/nailDesigner/src/main/resources/static/img/logo-preto-agende-nail.png" alt="" />
+                <img src="logo-preto-agende-nail.png" alt="Foto de Jessika Xavier" />
             </div>
 
             <h1>Sobre mim</h1>
@@ -45,40 +78,76 @@
             <p>Unhas bonitas e bem cuidadas são mais do que estética — são expressão, autoestima e amor-próprio. Por
                 isso, cada agendamento é tratado com responsabilidade, carinho e dedicação.</p>
         </section>
-        <section>
 
+        <section class="sobre-valores">
+            <h2>Meus diferenciais</h2>
+            <ul>
+                <li><strong>Atendimento personalizado:</strong> cada cliente é única e merece atenção exclusiva.
+                </li>
+                <li><strong>Ambiente acolhedor:</strong> conforto, respeito e leveza em cada detalhe.</li>
+                <li><strong>Compromisso com a higiene:</strong> esterilização, cuidados e protocolos atualizados.
+                </li>
+                <li><strong>Atualização constante:</strong> invisto sempre em cursos e aperfeiçoamento técnico.</li>
+            </ul>
+        </section>
+        
+        <section class="sobre-missao">
+            <h2>Missão, Visão e Propósito</h2>
+            <p><strong>Missão:</strong> Cuidar da beleza e autoestima das minhas clientes com excelência, carinho e
+                respeito.</p>
+            <p><strong>Visão:</strong> Ser referência como Nail Designer na minha região, reconhecida pela qualidade
+                e pelo atendimento humano.</p>
+            <p><strong>Propósito:</strong> Transformar momentos simples em experiências de cuidado e empoderamento
+                feminino.</p>
+        </section>
 
-            <section class="sobre-valores">
-                <h2>Meus diferenciais</h2>
-                <ul>
-                    <li><strong>Atendimento personalizado:</strong> cada cliente é única e merece atenção exclusiva.
-                    </li>
-                    <li><strong>Ambiente acolhedor:</strong> conforto, respeito e leveza em cada detalhe.</li>
-                    <li><strong>Compromisso com a higiene:</strong> esterilização, cuidados e protocolos atualizados.
-                    </li>
-                    <li><strong>Atualização constante:</strong> invisto sempre em cursos e aperfeiçoamento técnico.</li>
-                </ul>
-            </section>
-            <section class="sobre-missao">
-                <h2>Missão, Visão e Propósito</h2>
-                <p><strong>Missão:</strong> Cuidar da beleza e autoestima das minhas clientes com excelência, carinho e
-                    respeito.</p>
-                <p><strong>Visão:</strong> Ser referência como Nail Designer na minha região, reconhecida pela qualidade
-                    e pelo atendimento humano.</p>
-                <p><strong>Propósito:</strong> Transformar momentos simples em experiências de cuidado e empoderamento
-                    feminino.</p>
-            </section>
-
-            <section class="sobre-cta">
-                <h2>Agende seu horário</h2>
-                <p>Está pronta para transformar seu dia com unhas lindas e bem cuidadas? Clique no botão abaixo e agende
-                    seu atendimento comigo!</p>
-                <div class="btn">
-                    <a href="agendamento.html" class="botao-agendar">Agendar agora</a>
-                </div>
-            </section>
+        <section class="sobre-cta">
+            <h2>Agende seu horário</h2>
+            <p>Está pronta para transformar seu dia com unhas lindas e bem cuidadas? Clique no botão abaixo e agende
+                seu atendimento comigo!</p>
+            <div class="btn">
+                <a href="agendamento.html" class="botao-agendar">Agendar agora</a>
+            </div>
         </section>
     </main>
+
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-section about">
+                <h3>Agende Nail</h3>
+                <p>Facilitando seu agendamento de unhas com praticidade e rapidez. Conecte-se com as melhores nail designers!</p>
+            </div>
+            <div class="footer-section links">
+                <h3>Links Rápidos</h3>
+                <ul>
+                    <li><a href="landing-page.html">Início</a></li>
+                    <li><a href="servicos.html">Serviços</a></li>
+                    <li><a href="#">Contato</a></li>
+                    <li><a href="sobre.html">Sobre mim</a></li>
+                </ul>
+            </div>
+            <div class="footer-section contact">
+                <h3>Contato</h3>
+                <p><i class="fas fa-phone"></i>+55 (11) 97816-8814</p>
+                <p><i class="fas fa-envelope"></i>contato@agendenail.com.br</p>
+                <p><i class="fas fa-map-marker-alt"></i> Itapecerica da Serra, SP/Brasil</p>
+            </div>
+            <div class="footer-section social">
+                <h3>Siga-nos</h3>
+                <div class="social-links">
+                    <a href="https://www.tiktok.com/@jessikaxaviier?_t=8e9KNyf8geU&_r=1&fbclid=PAZXh0bgNhZW0CMTEAAaeWMbwgZeRDFisthtCFqAp5x_KeXP-KGYNsEvf7R9koAGBVKo2IEVTE09QOOA_aem_sJLYFqPwHNheywHeLk88-Q" target="_blank" aria-label="Facebook"><i class="fab fa-tiktok"></i></a>
+                    <a href="https://www.instagram.com/naildesignerjx/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://api.whatsapp.com/send/?phone=5511978168814&text&type=phone_number&app_absent=0" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Agende Nail. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="menu.js"></script>
+
 </body>
 
 </html>
