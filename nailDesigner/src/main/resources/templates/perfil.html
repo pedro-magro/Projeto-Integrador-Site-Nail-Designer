@@ -10,8 +10,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Hedvig+Letters+Serif:opsz@12..24&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="/nailDesigner/src/main/resources/static/css/style_sobre_mim.css">
-    <title>Agenda Nail | Sobre mim</title>
+    <link rel="stylesheet" href="/nailDesigner/src/main/resources/static/css/style_perfil.css">
+    <title>Agenda Nail | Perfil</title>
 </head>
 
 <body>
@@ -24,7 +24,7 @@
                 <div class="menu-page"><a href="#">Contato</a></div>
                 <div class="menu-page"><a href="sobre.html">Sobre mim</a></div>
             </nav>
-            <a href="perfil.html" class="profile-icon-desktop">
+            <a href="edicao_perfil.html" class="profile-icon-desktop">
                 <img src="/nailDesigner/src/main/resources/static/img/foto-perfil.png" class="foto-perfil" alt="Foto de perfil do usuário">
             </a>
         </div>
@@ -54,61 +54,47 @@
             <li><a href="servicos.html"><i class="fas fa-concierge-bell"></i> Serviços</a></li>
             <li><a href="#">Contato</a></li>
             <li><a href="sobre.html"><i class="fas fa-info-circle"></i> Sobre mim</a></li>
-            <li><a href="edicao_perfil.html"><i class="fas fa-user-circle"></i> Meu Perfil</a></li>
+            <li><a href="perfil.html"><i class="fas fa-user-circle"></i> Meu Perfil</a></li>
             <li><a href="#"><i class="fas fa-sign-out-alt"></i> Sair</a></li>
         </ul>
     </div>
 
     <div class="overlay" id="menu-overlay"></div>
 
-    <main class="sobre-container">
-        <section class="sobre-conteudo">
-            <div class="sobre-imagem">
-                <img src="logo-preto-agende-nail.png" alt="Foto de Jessika Xavier" />
+    <main class="perfil">
+        <div class="perfil-container">
+            <div class="foto-perfil-editavel">
+                <img src="/nailDesigner/src/main/resources/static/img/foto_generica_perfil.png" alt="Foto de perfil">
+                <label for="upload-foto" class="botao-editar-foto">Editar foto</label>
+                <input type="file" id="upload-foto" style="display: none;">
             </div>
 
-            <h1>Sobre mim</h1>
-            <p>Olá! Eu sou <strong>Jessika Xavier</strong>, Nail Designer apaixonada pelo que faço. Desde o primeiro
-                atendimento, minha missão é muito clara: entregar não só unhas impecáveis, mas também uma experiência
-                leve, acolhedora e transformadora para cada cliente.</p>
-            <br>
-            <p>Trabalho com <strong>técnicas modernas, produtos de qualidade</strong> e foco total na higiene e no
-                cuidado. Faço questão de oferecer um espaço onde você se sinta bem-vinda, segura e valorizada.</p>
-            <br>
-            <p>Unhas bonitas e bem cuidadas são mais do que estética — são expressão, autoestima e amor-próprio. Por
-                isso, cada agendamento é tratado com responsabilidade, carinho e dedicação.</p>
-        </section>
+            <form class="formulario-perfil">
+                <div class="linha-inputs">
+                    <div class="campo">
+                        <label for="nome">Nome</label>
+                        <input type="text" id="nome" placeholder="Nome completo">
+                    </div>
+                    <div class="campo">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" placeholder="email@gmail.com">
+                    </div>
+                </div>
 
-        <section class="sobre-valores">
-            <h2>Meus diferenciais</h2>
-            <ul>
-                <li><strong>Atendimento personalizado:</strong> cada cliente é única e merece atenção exclusiva.
-                </li>
-                <li><strong>Ambiente acolhedor:</strong> conforto, respeito e leveza em cada detalhe.</li>
-                <li><strong>Compromisso com a higiene:</strong> esterilização, cuidados e protocolos atualizados.
-                </li>
-                <li><strong>Atualização constante:</strong> invisto sempre em cursos e aperfeiçoamento técnico.</li>
-            </ul>
-        </section>
-        
-        <section class="sobre-missao">
-            <h2>Missão, Visão e Propósito</h2>
-            <p><strong>Missão:</strong> Cuidar da beleza e autoestima das minhas clientes com excelência, carinho e
-                respeito.</p>
-            <p><strong>Visão:</strong> Ser referência como Nail Designer na minha região, reconhecida pela qualidade
-                e pelo atendimento humano.</p>
-            <p><strong>Propósito:</strong> Transformar momentos simples em experiências de cuidado e empoderamento
-                feminino.</p>
-        </section>
+                <div class="linha-inputs">
+                    <div class="campo">
+                        <label for="telefone">Telefone</label>
+                        <input type="tel" id="telefone" placeholder="(DDD) XXXXX-XXXX">
+                    </div>
+                    <div class="campo">
+                        <label for="senha">Senha</label>
+                        <input type="password" id="senha" placeholder="************">
+                    </div>
+                </div>
 
-        <section class="sobre-cta">
-            <h2>Agende seu horário</h2>
-            <p>Está pronta para transformar seu dia com unhas lindas e bem cuidadas? Clique no botão abaixo e agende
-                seu atendimento comigo!</p>
-            <div class="btn">
-                <a href="agendamento.html" class="botao-agendar">Agendar agora</a>
-            </div>
-        </section>
+                <button type="submit" class="botao-editar">Editar perfil</button>
+            </form>
+        </div>
     </main>
 
     <footer>
