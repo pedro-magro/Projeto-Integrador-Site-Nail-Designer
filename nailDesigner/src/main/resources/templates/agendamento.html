@@ -1,53 +1,142 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <meta name="author" content="Vinícius Roodrigues Xavier, Pedro Henrique Magro, Felipe Augusto Soares">
+    <meta name="author" content="Vinícius Roodrigues Xavier, Pedro Henrique Magro, Felipe Augusto Soares">
     <meta name="description" content="Site Agende Nail que faz agendamentos de unhas">
     <meta name="keywords" content="landing page, agendamentos de unhas, nail designer">
+
     <link rel="stylesheet" href="/nailDesigner/src/main/resources/static/css/style-agendamento.css">
+
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Hedvig+Letters+Serif:wght@400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
     <title>Agenda Nail | Agendamento</title>
 </head>
 <body>
     <header>
-        <div class="container">
-            <img src="/nailDesigner/src/main/resources/static/img/logo-preto-agende-nail.png" class="logo"></img>
-            <nav class="menu" role="navigation">
+        <div class="container header-desktop">
+            <img src="/nailDesigner/src/main/resources/static/img/logo-preto-agende-nail.png" class="logo" alt="Logo Agende Nail">
+            <nav class="menu-desktop" role="navigation">
                 <div class="menu-page"><a href="landing-page.html">Início</a></div>
                 <div class="menu-page"><a href="servicos.html">Serviços</a></div>
                 <div class="menu-page"><a href="#">Contato</a></div>
-                <div class="menu-page"><a href="sobremim.html">Sobre mim</a></div>
+                <div class="menu-page"><a href="sobre.html">Sobre mim</a></div>
             </nav>
-            <a href="edicao_perfil.html">
-                <img src="/nailDesigner/src/main/resources/static/img/foto-perfil.png" class="foto-perfil"></img>
+            <a href="perfil.html" class="profile-icon-desktop">
+                <img src="/nailDesigner/src/main/resources/static/img/foto-perfil.png" class="foto-perfil" alt="Foto de perfil do usuário">
             </a>
         </div>
-    </header>
-            <div class="container-form">
-                <h1>Agendamento</h1>
-                <form action="">
-                    <div class="form-container">
-                        <label for="form-servico">Serviço</label>
-                        <select>
-                            <option>Selecione um serviço</option>
-                            <option>-</option>
-                        </select>
-                    </div>
-                    <div class="form-container">
-                        <label for="form-data">Data</label>
-                        <input id="form-data" type="date" placeholder="dd/mm/aaa">
-                    </div>
-                    <div class="form-container">
-                        <label for="form-hora">Hora</label>
-                        <input id="form-hora" type="datetime" placeholder="hh:mm:ss">
-                    </div>
-                    <div class="btn">
-                        <button id="btn-agendar">Agendar</button>
-                    </div>
-                </form>
-            </div>
 
+        <div class="header-mobile">
+            <div class="hamburger-icon" id="hamburger-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            <img src="/nailDesigner/src/main/resources/static/img/logo-preto-agende-nail.png" class="logo-mobile" alt="Logo Agende Nail Mobile">
+            <a href="perfil.html" class="profile-icon-mobile">
+                <img src="/nailDesigner/src/main/resources/static/img/foto-perfil.png" class="foto-perfil-mobile" alt="Foto de perfil do usuário">
+            </a>
+        </div>
+
+        <nav class="off-canvas-menu" id="off-canvas-menu">
+            <div class="off-canvas-header">
+                <img src="/nailDesigner/src/main/resources/static/img/logo-preto-agende-nail.png" class="logo-off-canvas" alt="Logo Agende Nail">
+                <div class="close-btn" id="off-canvas-close">
+                    <i class="fas fa-times"></i>
+                </div>
+            </div>
+            <div class="off-canvas-profile-info">
+                <a href="perfil.html">
+                    <img src="/nailDesigner/src/main/resources/static/img/foto-perfil.png" class="foto-perfil-off-canvas" alt="Foto de perfil do usuário">
+                </a>
+                <span>Olá, Vinícius!</span>
+            </div>
+            <ul>
+                <li><a href="landing-page.html"><i class="fas fa-home"></i> Início</a></li>
+                <li><a href="servicos.html"><i class="fas fa-cut"></i> Serviços</a></li>
+                <li><a href="#"><i class="fas fa-envelope"></i> Contato</a></li>
+                <li><a href="sobremim.html"><i class="fas fa-info-circle"></i> Sobre mim</a></li>
+                <li><a href="meus-agendamentos.html"><i class="fas fa-calendar-alt"></i> Meus Agendamentos</a></li>
+                <li><a href="configuracoes.html"><i class="fas fa-cog"></i> Configurações</a></li>
+            </ul>
+        </nav>
+        <div class="overlay" id="menu-overlay"></div>
+    </header>
+
+    <main>
+        <div class="intro-section-mobile">
+            <h2>Pronta para agendar?</h2>
+            <p>Escolha o serviço desejado e reserve seu horário com praticidade.</p>
+        </div>
+
+        <div class="container-form agendamento">
+            <h1>Agendamento</h1>
+            <form action="">
+                <div class="form-container">
+                    <label for="form-servico">Serviço</label>
+                    <select id="form-servico">
+                        <option value="">Selecione um serviço</option>
+                        <option value="manicure-simples">Manicure Simples</option>
+                        <option value="pedicure-simples">Pedicure Simples</option>
+                        <option value="alongamento-gel">Alongamento em Gel</option>
+                        <option value="fibra-vidro">Fibra de Vidro</option>
+                        <option value="blindagem">Blindagem</option>
+                        <option value="esmaltacao-gel">Esmaltação em Gel</option>
+                    </select>
+                </div>
+                <div class="form-container">
+                    <label for="form-data">Data</label>
+                    <input id="form-data" type="date">
+                </div>
+                <div class="form-container">
+                    <label for="form-hora">Hora</label>
+                    <input id="form-hora" type="time">
+                </div>
+                <div class="btn-container">
+                    <button id="btn-agendar" type="submit">Agendar</button>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-section about">
+                <h3>Agende Nail</h3>
+                <p>Facilitando seu agendamento de unhas com praticidade e rapidez. Conecte-se com as melhores nail designers!</p>
+            </div>
+            <div class="footer-section links">
+                <h3>Links Rápidos</h3>
+                <ul>
+                    <li><a href="landing-page.html">Início</a></li>
+                    <li><a href="servicos.html">Serviços</a></li>
+                    <li><a href="#">Contato</a></li>
+                    <li><a href="sobremim.html">Sobre mim</a></li>
+                </ul>
+            </div>
+            <div class="footer-section contact">
+                <h3>Contato</h3>
+                <p><i class="fas fa-phone"></i>+55 (11) 97816-8814</p>
+                <p><i class="fas fa-envelope"></i>contato@agendenail.com.br</p>
+                <p><i class="fas fa-map-marker-alt"></i> Itapecerica da Serra, SP/Brasil</p>
+            </div>
+            <div class="footer-section social">
+                <h3>Siga-nos</h3>
+                <div class="social-links">
+                    <a href="https://www.tiktok.com/@jessikaxaviier?_t=8e9KNyf8geU&_r=1&fbclid=PAZXh0bgNhZW0CMTEAAaeWMbwgZeRDFisthtCFqAp5x_KeXP-KGYNsEvf7R9koAGBVKo2IEVTE09QOOA_aem_sJLYFqPwHNheywHeLk88-Q" target="_blank" aria-label="Facebook"><i class="fab fa-tiktok"></i></a>
+                    <a href="https://www.instagram.com/naildesignerjx/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://api.whatsapp.com/send/?phone=5511978168814&text&type=phone_number&app_absent=0" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Agende Nail. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="/nailDesigner/src/main/resources/static/js/menu.js"></script>
 </body>
 </html>

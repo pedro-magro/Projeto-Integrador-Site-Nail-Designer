@@ -1,51 +1,81 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Vinícius Roodrigues Xavier, Pedro Henrique Magro, Felipe Augusto Soares">
     <meta name="description" content="Site Agende Nail que faz agendamentos de unhas">
     <meta name="keywords" content="landing page, agendamentos de unhas, nail designer">
-    <link rel="stylesheet" th:href="@{/css/style_cadastro_login.css}">
+
+    <link rel="stylesheet" href="login.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Hedvig+Letters+Serif:opsz@12..24&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Hedvig+Letters+Serif:opsz@12..24&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+
     <title>Agenda Nail | Login</title>
 </head>
 
 <body>
     <header>
-        <div class="container">
-            <img src="/nailDesigner/src/main/resources/static/img/logo-preto-agende-nail.png" class="logo"></img>
+        <div class="container header-desktop"> <img src="logo-preto-agende-nail.png" class="logo" alt="Logo Agende Nail">
             <nav class="menu" role="navigation">
                 <div class="menu-page"><a href="landing-page.html">Início</a></div>
                 <div class="menu-page"><a href="servicos.html">Serviços</a></div>
                 <div class="menu-page"><a href="#">Contato</a></div>
-                <div class="menu-page"><a href="sobre.html">Sobre mim</a></div>
+                <div class="menu-page"><a href="sobremim.html">Sobre mim</a></div>
             </nav>
-            <a href="edicao_perfil.html">
-                <img src="/nailDesigner/src/main/resources/static/img/foto-perfil.png" class="foto-perfil"></img>
+            <a href="perfil.html" class="profile-icon-desktop"> <img src="foto-perfil.png" class="foto-perfil" alt="Foto de perfil do usuário">
             </a>
         </div>
-    </header>
-    <div class="container-form">
 
+        <div class="header-mobile">
+            <i class="fas fa-bars hamburger-icon" id="hamburger-toggle"></i>
+            <img src="logo-preto-agende-nail.png" class="logo-mobile" alt="Logo Agende Nail Mobile">
+            <div class="profile-icon-mobile">
+                <a href="perfil.html">
+                    <img src="foto-perfil.png" class="foto-perfil-mobile" alt="Foto de perfil do usuário (Mobile)">
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <div class="off-canvas-menu" id="off-canvas-menu">
+        <div class="off-canvas-header">
+            <img src="logo-preto-agende-nail.png" class="logo-off-canvas" alt="Logo Agende Nail Off-Canvas">
+            <i class="fas fa-times close-btn" id="off-canvas-close"></i>
+        </div>
+        <div class="off-canvas-profile-info">
+            <img src="foto-perfil.png" class="foto-perfil-off-canvas" alt="Foto de perfil Off-Canvas">
+            <span>Olá, Usuário!</span> </div>
+        <ul>
+            <li><a href="landing-page.html"><i class="fas fa-home"></i> Início</a></li>
+            <li><a href="servicos.html"><i class="fas fa-concierge-bell"></i> Serviços</a></li>
+            <li><a href="#"><i class="fas fa-envelope"></i> Contato</a></li>
+            <li><a href="sobremim.html"><i class="fas fa-info-circle"></i> Sobre mim</a></li>
+            <li><a href="perfil.html"><i class="fas fa-user-circle"></i> Meu Perfil</a></li>
+            <li><a href="#"><i class="fas fa-sign-out-alt"></i> Sair</a></li>
+        </ul>
+    </div>
+
+    <div class="overlay" id="menu-overlay"></div>
+
+    <div class="container-form">
         <form action="">
             <h1>Login</h1>
             <div class="form-container">
-                <label for="form-data">Email</label>
-                <input id="form-data" type="email" placeholder="email@gmail.com">
+                <label for="form-email">Email</label>
+                <input id="form-email" type="email" placeholder="email@gmail.com">
             </div>
             <div class="form-container">
-                <label for="form-hora">Senha</label>
-                <input id="form-hora" type="password" placeholder="********">
+                <label for="form-senha">Senha</label>
+                <input id="form-senha" type="password" placeholder="********">
             </div>
             <div class="password-config">
                 <div class="container-lembrar-login">
                     <input id="password-checkbox" type="checkbox">
-                    <label for="">Lembrar de mim?</label>
+                    <label for="password-checkbox">Lembrar de mim?</label>
                 </div>
                 <div class="container-esqueci-senha">
                     <a href="#">Esqueci a senha</a>
@@ -63,6 +93,42 @@
         <br>
     </div>
 
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-section about">
+                <h3>Agende Nail</h3>
+                <p>Facilitando seu agendamento de unhas com praticidade e rapidez. Conecte-se com as melhores nail designers!</p>
+            </div>
+            <div class="footer-section links">
+                <h3>Links Rápidos</h3>
+                <ul>
+                    <li><a href="landing-page.html">Início</a></li>
+                    <li><a href="servicos.html">Serviços</a></li>
+                    <li><a href="#">Contato</a></li>
+                    <li><a href="sobremim.html">Sobre mim</a></li>
+                </ul>
+            </div>
+            <div class="footer-section contact">
+                <h3>Contato</h3>
+                <p><i class="fas fa-phone"></i>+55 (11) 97816-8814</p>
+                <p><i class="fas fa-envelope"></i>contato@agendenail.com.br</p>
+                <p><i class="fas fa-map-marker-alt"></i> Itapecerica da Serra, SP/Brasil</p>
+            </div>
+            <div class="footer-section social">
+                <h3>Siga-nos</h3>
+                <div class="social-links">
+                    <a href="https://www.tiktok.com/@jessikaxaviier?_t=8e9KNyf8geU&_r=1&fbclid=PAZXh0bgNhZW0CMTEAAaeWMbwgZeRDFisthtCFqAp5x_KeXP-KGYNsEvf7R9koAGBVKo2IEVTE09QOOA_aem_sJLYFqPwHNheywHeLk88-Q" target="_blank" aria-label="Facebook"><i class="fab fa-tiktok"></i></a>
+                    <a href="https://www.instagram.com/naildesignerjx/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://api.whatsapp.com/send/?phone=5511978168814&text&type=phone_number&app_absent=0" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Agende Nail. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="/nailDesigner/src/main/resources/static/js/menu.js"></script>
 </body>
 
 </html>

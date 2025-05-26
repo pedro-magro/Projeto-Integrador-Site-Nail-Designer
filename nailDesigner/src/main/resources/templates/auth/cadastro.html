@@ -1,70 +1,144 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Vinícius Roodrigues Xavier, Pedro Henrique Magro, Felipe Augusto Soares">
     <meta name="description" content="Site Agende Nail que faz agendamentos de unhas">
     <meta name="keywords" content="landing page, agendamentos de unhas, nail designer">
-    <link rel="stylesheet" th:href="@{/css/style_cadastro_login.css}">
+
+    <link rel="stylesheet" href="cadastro.css"> 
+    
+    
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Hedvig+Letters+Serif:opsz@12..24&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Hedvig+Letters+Serif:opsz@12..24&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
     <title>Agenda Nail | Cadastro</title>
 </head>
-
 <body>
     <header>
-        <div class="container">
-            <img th:src="@{/assets/img/logo-preto-agende-nail.png}" class="logo">
-            <nav class="menu" role="navigation">
+        <div class="container header-desktop">
+            <img th:src="@{/assets/img/logo-preto-agende-nail.png}" class="logo" alt="Logo Agende Nail">
+            <nav class="menu-desktop" role="navigation">
                 <div class="menu-page"><a href="landing-page.html">Início</a></div>
                 <div class="menu-page"><a href="servicos.html">Serviços</a></div>
                 <div class="menu-page"><a href="#">Contato</a></div>
                 <div class="menu-page"><a href="sobre.html">Sobre mim</a></div>
             </nav>
-            <a href="edicao_perfil.html">
-                <img th:src="@{/assets/img/foto-perfil.png}" class="foto-perfil">
+            <a href="perfil.html" class="profile-icon-desktop">
+                <img th:src="@{/assets/img/foto-perfil.png}" class="foto-perfil" alt="Foto de perfil do usuário">
             </a>
         </div>
+
+        <div class="header-mobile">
+            <div class="hamburger-icon" id="hamburger-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            <img th:src="@{/assets/img/logo-preto-agende-nail.png}" class="logo-mobile" alt="Logo Agende Nail Mobile">
+            <a href="perfil.html" class="profile-icon-mobile">
+                <img th:src="@{/assets/img/foto-perfil.png}" class="foto-perfil-mobile" alt="Foto de perfil do usuário">
+            </a>
+        </div>
+
+        <nav class="off-canvas-menu" id="off-canvas-menu">
+            <div class="off-canvas-header">
+                <img th:src="@{/assets/img/logo-preto-agende-nail.png}" class="logo-off-canvas" alt="Logo Agende Nail">
+                <div class="close-btn" id="off-canvas-close">
+                    <i class="fas fa-times"></i>
+                </div>
+            </div>
+            <div class="off-canvas-profile-info">
+                <a href="perfil.html">
+                    <img th:src="@{/assets/img/foto-perfil.png}" class="foto-perfil-off-canvas" alt="Foto de perfil do usuário">
+                </a>
+                <span>Olá, Visitante!</span>
+            </div>
+            <ul>
+                <li><a href="landing-page.html"><i class="fas fa-home"></i> Início</a></li>
+                <li><a href="servicos.html"><i class="fas fa-cut"></i> Serviços</a></li>
+                <li><a href="#"><i class="fas fa-envelope"></i> Contato</a></li>
+                <li><a href="sobre.html"><i class="fas fa-info-circle"></i> Sobre mim</a></li>
+                <li><a th:href="@{/login}"><i class="fas fa-sign-in-alt"></i> Login</a></li>
+                <li><a th:href="@{/cadastro}"><i class="fas fa-user-plus"></i> Cadastre-se</a></li>
+            </ul>
+        </nav>
+        <div class="overlay" id="menu-overlay"></div>
     </header>
 
-    <div class="container-form">
+    <main>
+        <div class="intro-section-mobile">
+            <h2>Bem-vinda(o)!</h2>
+            <p>Junte-se à nossa comunidade e agende seus serviços de beleza.</p>
+        </div>
 
-        <form th:action="@{/cadastro}" th:object="${usuario}" method="post">
+        <div class="container-form">
             <h1>Inscreva-se</h1>
             <div th:if="${mensagem}">
-                <p th:if ="${mensagem} ?" : th:text="${mensagem}" th:class="${mensagemClasse}" style="text-align: center;"></p>
+                <p th:text="${mensagem}" th:classappend="${mensagemClasse}" class="mensagem" style="text-align: center;"></p>
             </div>
-            <br>
-            <div class="form-container">
-                <label for="form-data">Nome</label>
-                <input id="form-data" type="text" placeholder="Nome completo" th:field="*{nome}" required />
-            </div>
-            <div class="form-container">
-                <label for="form-data">Telefone</label>
-                <input id="form-data" type="tel" placeholder="(DDD) XXXXX-XXXX" th:field="*{telefone}" required />
-            </div>
-            <div class="form-container">
-                <label for="form-data">Email</label>
-                <input id="form-data" type="email" placeholder="email@gmail.com" th:field="*{email}" required />
-            </div>
-            <div class="form-container">
-                <label for="form-hora">Senha</label>
-                <input id="form-hora" type="password" placeholder="********" th:field="*{senha}" required />
-            </div>
+            
+            <form th:action="@{/cadastro}" th:object="${usuario}" method="post">
+                <div class="form-group"> <label for="nome">Nome</label>
+                    <input id="nome" type="text" placeholder="Nome completo" th:field="*{nome}" required />
+                </div>
+                <div class="form-group">
+                    <label for="telefone">Telefone</label>
+                    <input id="telefone" type="tel" placeholder="(DDD) XXXXX-XXXX" th:field="*{telefone}" required />
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input id="email" type="email" placeholder="email@gmail.com" th:field="*{email}" required />
+                </div>
+                <div class="form-group">
+                    <label for="senha">Senha</label>
+                    <input id="senha" type="password" placeholder="********" th:field="*{senha}" required />
+                </div>
 
-            <div class="btn">
-                <button id="btn-agendar" type="submit">Cadastrar</button>
+                <div class="btn-container"> <button type="submit">Cadastrar</button>
+                </div>
+                <div class="link-container"> <span>Já tem uma conta? <a th:href="@{/login}">Login</a></span>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-section about">
+                <h3>Agende Nail</h3>
+                <p>Facilitando seu agendamento de unhas com praticidade e rapidez. Conecte-se com as melhores nail designers!</p>
             </div>
-            <div class="container-inscreva-se">
-                <span>Já tem uma conta? <a th:href="@{/login}">Login</a></span>
+            <div class="footer-section links">
+                <h3>Links Rápidos</h3>
+                <ul>
+                    <li><a href="landing-page.html">Início</a></li>
+                    <li><a href="servicos.html">Serviços</a></li>
+                    <li><a href="#">Contato</a></li>
+                    <li><a href="sobre.html">Sobre mim</a></li>
+                </ul>
             </div>
-        </form>
-    </div>
-    <br>
+            <div class="footer-section contact">
+                <h3>Contato</h3>
+                <p><i class="fas fa-phone"></i> (11) 98765-4321</p>
+                <p><i class="fas fa-envelope"></i> contato@agendenail.com.br</p>
+                <p><i class="fas fa-map-marker-alt"></i> Embu das Artes, SP, Brasil</p>
+            </div>
+            <div class="footer-section social">
+                <h3>Siga-nos</h3>
+                <div class="social-links">
+                    <a href="https://www.tiktok.com/@jessikaxaviier?_t=8e9KNyf8geU&_r=1&fbclid=PAZXh0bgNhZW0CMTEAAaeWMbwgZeRDFisthtCFqAp5x_KeXP-KGYNsEvf7R9koAGBVKo2IEVTE09QOOA_aem_sJLYFqPwHNheywHeLk88-Q" target="_blank" aria-label="Facebook"><i class="fab fa-tiktok"></i></a>
+                    <a href="https://www.instagram.com/naildesignerjx/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://api.whatsapp.com/send/?phone=5511978168814&text&type=phone_number&app_absent=0" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Agende Nail. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="/nailDesigner/src/main/resources/static/js/menu.js"></script>
 </body>
-
 </html>

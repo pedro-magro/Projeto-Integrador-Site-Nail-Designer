@@ -1,4 +1,4 @@
-/* agendamento.css - Estilos completos para a Página de Agendamento */
+/* login.css - Estilos completos para a Página de Login */
 
 /* Reset Básico */
 * {
@@ -48,6 +48,18 @@ header {
     gap: 20px;
 }
 
+/* O HTML do login.html não usa .header-desktop diretamente no header,
+   mas sim um container com a logo, nav e foto-perfil.
+   Vamos ajustar o seletor para corresponder ao HTML do login.html */
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 20px;
+}
+
+
 .logo {
     height: 90px;
     width: 90px;
@@ -55,7 +67,8 @@ header {
     margin-left: 0;
 }
 
-.menu-desktop {
+/* Ajustes para o menu de desktop no login.html */
+.menu { /* Antigo .menu-desktop */
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -64,11 +77,11 @@ header {
     padding: 0 40px;
 }
 
-.menu-desktop .menu-page {
+.menu .menu-page { /* Antigo .menu-desktop .menu-page */
     display: flex;
 }
 
-.menu-desktop .menu-page a {
+.menu .menu-page a { /* Antigo .menu-desktop .menu-page a */
     position: relative;
     text-decoration: none;
     font-size: 21px;
@@ -79,11 +92,11 @@ header {
     white-space: nowrap;
 }
 
-.menu-desktop .menu-page a:hover {
+.menu .menu-page a:hover { /* Antigo .menu-desktop .menu-page a:hover */
     color: #875ea5;
 }
 
-.menu-desktop .menu-page a::after {
+.menu .menu-page a::after { /* Antigo .menu-desktop .menu-page a::after */
     content: "";
     position: absolute;
     width: 0;
@@ -95,11 +108,11 @@ header {
     transition: width 0.3s ease;
 }
 
-.menu-desktop .menu-page a:hover::after {
+.menu .menu-page a:hover::after { /* Antigo .menu-desktop .menu-page a:hover::after */
     width: 40%;
 }
 
-.profile-icon-desktop .foto-perfil {
+.foto-perfil { /* Antigo .profile-icon-desktop .foto-perfil */
     height: 65px;
     width: 65px;
     border-radius: 50%;
@@ -109,11 +122,14 @@ header {
     margin-right: 0;
 }
 
-.profile-icon-desktop .foto-perfil:hover {
+.foto-perfil:hover { /* Antigo .profile-icon-desktop .foto-perfil:hover */
     transform: scale(1.1);
 }
 
 /* HEADER MOBILE (Elementos do Hamburguer) - Escondido por padrão */
+/* No login.html não há os elementos do menu mobile diretamente no HTML,
+   mas a estrutura CSS foi mantida para compatibilidade futura ou para
+   o JS adicionar esses elementos. */
 .header-mobile {
     display: none;
     justify-content: space-between;
@@ -266,37 +282,16 @@ header {
 }
 
 
-/* CONTEÚDO PRINCIPAL (MAIN) */
-main {
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 60px 20px;
-    z-index: 1;
-}
+/* CONTEÚDO PRINCIPAL (MAIN) - Adaptado para o formulário de login */
+/* Como o login.html não usa <main>, vamos aplicar os estilos ao body diretamente
+   ou ao container-form, dependendo do desejado.
+   Para manter a estrutura do cadastro.css, podemos envolver o .container-form
+   numa tag <main> se desejado, ou ajustar o body para ter um flex-direction: column
+   e centralizar o conteúdo. O CSS atual do body já faz isso, então manteremos. */
 
-/* Seção de Introdução para Mobile (visível apenas em telas menores via CSS) */
-.intro-section-mobile {
-    display: none;
-    text-align: center;
-    margin-bottom: 40px;
-    color: #3c2c54;
-    font-family: 'Playfair Display', serif;
-    font-size: 1.5em;
-    line-height: 1.4;
-    max-width: 400px;
-}
-.intro-section-mobile p {
-    font-family: 'Segoe UI', sans-serif;
-    font-size: 0.9em;
-    margin-top: 10px;
-    opacity: 0.8;
-}
 
-/* FORMULÁRIO DE AGENDAMENTO - Estilos Específicos para Agendamento */
-.container-form { /* Usado aqui como o contêiner principal do formulário */
+/* FORMULÁRIO DE LOGIN - Estilos Específicos */
+.container-form { /* Usado como o contêiner principal do formulário */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -307,28 +302,51 @@ main {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
     width: 100%;
     max-width: 450px;
-    margin-top: 0;
+    margin: auto; /* Centraliza verticalmente e horizontalmente com flex no body */
+    margin-top: 50px; /* Adiciona um espaço do header */
+    margin-bottom: 50px; /* Adiciona um espaço do footer */
 }
 
 .container-form h1 {
     font-size: 55px;
     font-family: 'Playfair Display', serif;
-    margin-bottom: 35px; /* Ajustado para agendamento */
+    margin-bottom: 25px;
     color: #3c2c54;
     font-weight: 700;
     text-align: center;
 }
 
+/* Mensagens de sucesso/erro (se aplicável ao login) */
+.mensagem {
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 15px;
+    padding: 8px 15px;
+    border-radius: 5px;
+}
+.mensagem.mensagem-sucesso {
+    color: green;
+    background-color: rgba(0, 128, 0, 0.1);
+    border: 1px solid green;
+}
+.mensagem.mensagem-erro {
+    color: red;
+    background-color: rgba(255, 0, 0, 0.1);
+    border: 1px solid red;
+}
+
 form {
     display: flex;
     flex-direction: column;
-    gap: 25px; /* Ajustado para agendamento */
+    gap: 20px;
     width: 100%;
     max-width: 380px;
 }
 
-.form-container { /* Nome da classe para agrupar label e input neste formulário */
-    text-align: left;
+.form-container { /* Nome diferente para evitar conflito com .form-group do cadastro */
+    margin-bottom: 0;
+    display: flex;
+    flex-direction: column;
     width: 100%;
 }
 
@@ -341,13 +359,8 @@ label {
     font-family: 'Playfair Display', serif;
 }
 
-input[type="text"],
-input[type="tel"],
 input[type="email"],
-input[type="password"],
-input[type="date"],
-input[type="time"],
-select {
+input[type="password"] {
     padding: 14px;
     font-size: 17px;
     border: 1px solid #c9b6ff;
@@ -359,8 +372,7 @@ select {
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-input:focus,
-select:focus {
+input:focus {
     outline: none;
     border-color: #875ea5;
     box-shadow: 0 0 0 3px rgba(135, 94, 165, 0.2);
@@ -370,9 +382,54 @@ input::placeholder {
     color: #aaa;
 }
 
-.btn-container {
+/* Estilos específicos para a seção de configurações de senha no login */
+.password-config {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    font-size: 0.9em;
+    color: #3c2c54;
+    margin-top: -10px; /* Ajusta o espaço com o input acima */
+    margin-bottom: 10px; /* Ajusta o espaço com o botão abaixo */
+}
+
+.container-lembrar-login {
+    display: flex;
+    align-items: center;
+}
+
+.container-lembrar-login input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    margin-right: 8px;
+    cursor: pointer;
+}
+
+.container-lembrar-login label {
+    margin-bottom: 0;
+    font-size: 0.9em;
+    font-weight: normal;
+    font-family: 'Segoe UI', sans-serif; /* Altera a fonte para ser mais discreta */
+}
+
+.container-esqueci-senha a {
+    color: #875ea5;
+    text-decoration: none;
+    font-weight: bold;
+    transition: text-decoration 0.3s ease, color 0.3s ease;
+    font-size: 0.9em;
+}
+
+.container-esqueci-senha a:hover {
+    text-decoration: underline;
+    color: #5d3a8b;
+}
+
+
+.btn { /* Antigo .btn-container */
     text-align: center;
-    margin-top: 30px; /* Ajustado para agendamento */
+    margin-top: 25px;
     width: 100%;
 }
 
@@ -396,6 +453,27 @@ button:hover {
     transform: translateY(-3px);
     box-shadow: 0 8px 20px rgba(0,0,0,0.25);
 }
+
+/* Estilos para o link de "Não tem uma conta?" */
+.container-inscreva-se {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 1em;
+    color: #3c2c54;
+}
+
+.container-inscreva-se a {
+    color: #875ea5;
+    text-decoration: none;
+    font-weight: bold;
+    transition: text-decoration 0.3s ease, color 0.3s ease;
+}
+
+.container-inscreva-se a:hover {
+    text-decoration: underline;
+    color: #5d3a8b;
+}
+
 
 /* FOOTER */
 footer {
@@ -488,7 +566,7 @@ footer {
     color: rgba(248, 248, 248, 0.7);
 }
 
-/* RESPONSIVIDADE (Específica para Agendamento) */
+/* RESPONSIVIDADE */
 
 /* Esconde o header mobile por padrão e mostra o desktop */
 .header-mobile, .off-canvas-menu, .overlay {
@@ -498,7 +576,7 @@ footer {
 /* Breakpoint para telas intermediárias (tablets, laptops menores) */
 @media (max-width: 992px) {
     /* Esconde o header desktop */
-    .header-desktop {
+    header .container { /* Ajuste para o seletor do header do login.html */
         display: none;
     }
 
@@ -512,17 +590,16 @@ footer {
     }
 
     /* Ajustes no Main e Formulário para telas intermediárias */
-    main {
-        padding: 40px 20px;
-    }
     .container-form {
         max-width: 90%;
+        margin-top: 30px;
+        margin-bottom: 30px;
     }
 }
 
 
-/* Breakpoint para telas menores (smartphones) */
-@media (max-width: 350px) { /* Este é o breakpoint original de 768px */
+/* Breakpoint para telas menores (smartphones) - AJUSTES MAIS AGRESSIVOS AQUI! */
+@media (max-width: 350px) {
     header {
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         background-color: rgba(255, 255, 255, 0.6);
@@ -549,62 +626,60 @@ footer {
         width: 38px;
     }
 
-    /* Torna a seção de introdução visível em mobile */
-    .intro-section-mobile {
-        display: block;
-        max-width: 95%;
-        font-size: 1.2em;
-        margin-bottom: 25px;
-    }
-    .intro-section-mobile h2 {
-        font-size: 1.5em;
-    }
-    .intro-section-mobile p {
-        font-size: 0.8em;
-        margin-top: 5px;
-    }
+    /* A seção de introdução mobile não existe no login.html */
 
-    /* Ajustes no Main e Formulário para smartphones */
-    main {
-        padding: 25px 15px;
-    }
-
+    /* Ajustes no Formulário para smartphones */
     .container-form {
         padding: 20px;
         max-width: 98%;
+        margin-top: 20px;
+        margin-bottom: 20px;
     }
 
     .container-form h1 {
         font-size: 38px;
-        margin-bottom: 20px; /* Ajuste para mobile no agendamento */
+        margin-bottom: 15px;
     }
 
     form {
-        gap: 15px; /* Ajuste para mobile no agendamento */
+        gap: 10px;
+    }
+
+    .form-container { /* Nome da classe no login.html */
+        margin-bottom: 0;
     }
 
     label {
         font-size: 16px;
     }
 
-    input[type="text"],
-    input[type="tel"],
     input[type="email"],
-    input[type="password"],
-    input[type="date"],
-    input[type="time"],
-    select {
+    input[type="password"] {
         padding: 10px;
         font-size: 14px;
     }
 
-    .btn-container {
-        margin-top: 20px; /* Ajuste para mobile no agendamento */
+    .password-config {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+    .container-lembrar-login, .container-esqueci-senha {
+        width: 100%;
+    }
+
+    .btn {
+        margin-top: 15px;
     }
 
     button {
         padding: 10px 15px;
         font-size: 16px;
+    }
+
+    .container-inscreva-se {
+        margin-top: 15px;
+        font-size: 0.9em;
     }
 
     footer {

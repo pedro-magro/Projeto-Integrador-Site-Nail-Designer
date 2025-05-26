@@ -1,4 +1,4 @@
-/* agendamento.css - Estilos completos para a Página de Agendamento */
+/* cadastro.css - Estilos completos para a Página de Cadastro */
 
 /* Reset Básico */
 * {
@@ -279,7 +279,7 @@ main {
 
 /* Seção de Introdução para Mobile (visível apenas em telas menores via CSS) */
 .intro-section-mobile {
-    display: none;
+    display: none; /* Escondido por padrão em telas maiores */
     text-align: center;
     margin-bottom: 40px;
     color: #3c2c54;
@@ -295,7 +295,7 @@ main {
     opacity: 0.8;
 }
 
-/* FORMULÁRIO DE AGENDAMENTO - Estilos Específicos para Agendamento */
+/* FORMULÁRIO DE CADASTRO/LOGIN - Estilos Específicos para Cadastro */
 .container-form { /* Usado aqui como o contêiner principal do formulário */
     display: flex;
     flex-direction: column;
@@ -313,22 +313,43 @@ main {
 .container-form h1 {
     font-size: 55px;
     font-family: 'Playfair Display', serif;
-    margin-bottom: 35px; /* Ajustado para agendamento */
+    margin-bottom: 25px; /* Reduzido o margin-bottom para reduzir o espaço */
     color: #3c2c54;
     font-weight: 700;
     text-align: center;
 }
 
+/* Mensagens de sucesso/erro (Thymeleaf) */
+.mensagem {
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 15px;
+    padding: 8px 15px;
+    border-radius: 5px;
+}
+.mensagem.mensagem-sucesso {
+    color: green;
+    background-color: rgba(0, 128, 0, 0.1);
+    border: 1px solid green;
+}
+.mensagem.mensagem-erro {
+    color: red;
+    background-color: rgba(255, 0, 0, 0.1);
+    border: 1px solid red;
+}
+
 form {
     display: flex;
     flex-direction: column;
-    gap: 25px; /* Ajustado para agendamento */
+    gap: 20px; /* Reduzido o gap entre os grupos de formulário */
     width: 100%;
     max-width: 380px;
 }
 
-.form-container { /* Nome da classe para agrupar label e input neste formulário */
-    text-align: left;
+.form-group { /* Nova classe para agrupar label e input */
+    margin-bottom: 0;
+    display: flex;
+    flex-direction: column;
     width: 100%;
 }
 
@@ -372,7 +393,7 @@ input::placeholder {
 
 .btn-container {
     text-align: center;
-    margin-top: 30px; /* Ajustado para agendamento */
+    margin-top: 25px; /* Reduzido o margin-top */
     width: 100%;
 }
 
@@ -395,6 +416,25 @@ button:hover {
     background-color: #875ea5;
     transform: translateY(-3px);
     box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+}
+
+.link-container {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 1em;
+    color: #3c2c54;
+}
+
+.link-container a {
+    color: #875ea5;
+    text-decoration: none;
+    font-weight: bold;
+    transition: text-decoration 0.3s ease, color 0.3s ease;
+}
+
+.link-container a:hover {
+    text-decoration: underline;
+    color: #5d3a8b;
 }
 
 /* FOOTER */
@@ -488,7 +528,7 @@ footer {
     color: rgba(248, 248, 248, 0.7);
 }
 
-/* RESPONSIVIDADE (Específica para Agendamento) */
+/* RESPONSIVIDADE (Específica para Cadastro/Login) */
 
 /* Esconde o header mobile por padrão e mostra o desktop */
 .header-mobile, .off-canvas-menu, .overlay {
@@ -521,8 +561,8 @@ footer {
 }
 
 
-/* Breakpoint para telas menores (smartphones) */
-@media (max-width: 350px) { /* Este é o breakpoint original de 768px */
+/* Breakpoint para telas menores (smartphones) - AJUSTES MAIS AGRESSIVOS AQUI! */
+@media (max-width: 350px) {
     header {
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         background-color: rgba(255, 255, 255, 0.6);
@@ -576,11 +616,15 @@ footer {
 
     .container-form h1 {
         font-size: 38px;
-        margin-bottom: 20px; /* Ajuste para mobile no agendamento */
+        margin-bottom: 15px;
     }
 
     form {
-        gap: 15px; /* Ajuste para mobile no agendamento */
+        gap: 10px;
+    }
+
+    .form-group {
+        margin-bottom: 0;
     }
 
     label {
@@ -599,12 +643,16 @@ footer {
     }
 
     .btn-container {
-        margin-top: 20px; /* Ajuste para mobile no agendamento */
+        margin-top: 15px;
     }
 
     button {
         padding: 10px 15px;
         font-size: 16px;
+    }
+
+    .link-container {
+        margin-top: 15px;
     }
 
     footer {
