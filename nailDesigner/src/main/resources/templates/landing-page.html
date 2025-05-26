@@ -1,222 +1,262 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Vinícius Roodrigues Xavier, Pedro Henrique Magro, Felipe Augusto Soares">
-    <meta name="description" content="Site Agende Nail que faz agendamentos de unhas">
-    <meta name="keywords" content="landing page, agendamentos de unhas, nail designer">
-    <link href="https://fonts.googleapis.com/css2?family=Hedvig+Letters+Serif:opsz@12..24&display=swap"
-        rel="stylesheet">
+    <meta name="description" content="Site Agende Nail que faz agendamentos de unhas e realça a beleza das mãos.">
+    <meta name="keywords" content="landing page, agendamentos de unhas, nail designer, unhas decoradas, spa das mãos, remoção de gel, fibra de vidro, esmalteria">
+    <link href="https://fonts.googleapis.com/css2?family=Hedvig+Letters+Serif:opsz@12..24&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
-
-
-    <link rel="stylesheet" th:href="@{/css/style_landing_page.css}">
-    <title>Agenda Nail | Página Inicial</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" th:href="@{/css/style_landing_page.css}"
+    <title>Agenda Nail | Página Inicial - Agende Suas Unhas Agora!</title>
 </head>
 
 <body>
     <header>
-        <div class="container">
-            <div class="logo"></div>
-            <nav class="menu" role="navigation">
+        <div class="container header-desktop">
+            <img src="/nailDesigner/src/main/resources/static/img/logo-preto-agende-nail.png" class="logo" alt="Logo Agende Nail">
+            <nav class="menu-desktop" role="navigation">
                 <div class="menu-page"><a href="landing-page.html">Início</a></div>
                 <div class="menu-page"><a href="servicos.html">Serviços</a></div>
                 <div class="menu-page"><a href="#">Contato</a></div>
                 <div class="menu-page"><a href="sobre.html">Sobre mim</a></div>
             </nav>
-            <a href="edicao_perfil.html">
-                <div class="foto-perfil"></div>
+            <a href="perfil.html" class="profile-icon-desktop">
+                <img src="/nailDesigner/src/main/resources/static/img/foto-perfil.png" class="foto-perfil" alt="Foto de perfil do usuário">
             </a>
         </div>
-    </header>
-    <div class="faixada">
-        <div class="faixada-texto">
-            <p>Seja bem vindo ao<br><span class="destaque">Agende Nail</span></p>
-            <p>Conheça meu <span class="italic-class">négocio</span> e marque uma agenda</p>
-        </div>
-        <div>
-            <button class="agenda-btn">Agenda</button>
-        </div>
-        <div class="linha-seta">
-            <div class="linha"></div>
-            <a href="#galery">
-                <img src="/img/seta.png" alt="Seta para baixo" class="seta">
+
+        <div class="header-mobile">
+            <div class="hamburger-icon" id="hamburger-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            <img src="/nailDesigner/src/main/resources/static/img/logo-preto-agende-nail.png" class="logo-mobile" alt="Logo Agende Nail Mobile">
+            <a href="perfil.html" class="profile-icon-mobile">
+                <img src="/nailDesigner/src/main/resources/static/img/foto-perfil.png" class="foto-perfil-mobile" alt="Foto de perfil do usuário">
             </a>
-            <div class="linha"></div>
-        </div>
-        <div class="titulo-designs">
-            <p>Confira os designs excluivos</p>
         </div>
 
-        <div class="galery" id="galery">
-            <img class="image-nails" src="/img/unha-1.jpg" alt=""></img>
-            <img class="image-nails" src="/img/unha-2.jpg" alt=""></img>
-            <img class="image-nails" src="/img/unha-3.jpg" alt=""></img>
-            <img class="image-nails" src="/img/unha-4.jpg" alt=""></img>
-            <img class="image-nails" src="/img/unha-5.jpg" alt=""></img>
-            <img class="image-nails" src="/img/unha-6.jpg" alt=""></img>
-            <img class="image-nails" src="/img/unha-7.jpg" alt=""></img>
-            <img class="image-nails" src="/img/unha-8.jpg" alt=""></img>
-            <img class="image-nails" src="/img/unha-9.jpg" alt=""></img>
-            <img class="image-nails" src="/img/unha-10.jpg" alt=""></img>
-            <img class="image-nails" src="/img/unha-11.jpg" alt=""></img>
-            <img class="image-nails" src="/img/unha-12.jpg" alt=""></img>
-        </div>
-
-        <div class="produtos">
-            <div class="texto-produtos">
-                <h2>Produtos</h2>
-                <p>Conheça nossos esmaltes e materiais profissionais para cuidar das suas unhas com qualidade e estilo!
-                </p>
+        <nav class="off-canvas-menu" id="off-canvas-menu">
+            <div class="off-canvas-header">
+                <img src="/nailDesigner/src/main/resources/static/img/logo-preto-agende-nail.png" class="logo-off-canvas" alt="Logo Agende Nail">
+                <div class="close-btn" id="off-canvas-close">
+                    <i class="fas fa-times"></i>
+                </div>
             </div>
-            <div class="imagem-produtos">
-                <img src="/img/still-life-beauty-products-spreading-out.jpg" alt="Esmaltes coloridos derramados">
-            </div>
-        </div>
-
-        <div class="serviços">
-            <div class="imagem-produtos">
-                <img src="/img/close-up-manicurist-using-nail-polish.jpg" alt="">
-            </div>
-            <div class="texto-produtos">
-                <h2>Serviços</h2>
-                <p>Conheça nossos serviços profissionais para cuidar das suas unhas com qualidade e estilo</p>
-            </div>
-        </div>
-
-        <div class="localizacao">
-            <div class="titulo-designs">
-                <h1>Localização</h1>
-            </div>
-            <label for="endereco"><strong>Endereço:</strong></label>
-            <input type="text" id="endereco" value="Rua Antônio Baldusco - Jd. Montesano, Itapecerica Da Serra - SP"
-                readonly>
-
-            <div class="mapa">
-                <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3656.7317718937334!2d-46.65797898445557!3d-23.578059068266736!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce59c79f6f7ed7%3A0x2e2d05d8f1e7d99e!2sAv.%20Paulista%2C%201000!5e0!3m2!1spt-BR!2sbr!4v1713880884011!5m2!1spt-BR!2sbr"
-                    width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"
-                    referrerpolicy="no-referrer-when-downgrade"></iframe>
-            </div>
-        </div>
-
-        <div class="faixada-texto-contato">
-            <p>
-                Fale comigo pelo WhatsApp
-                <a class="whatsapp-link"
-                    href="https://api.whatsapp.com/send/?phone=5511978168814&text&type=phone_number&app_absent=0">
-                    <strong>+55 (11) 97816-8814</strong>
+            <div class="off-canvas-profile-info">
+                <a href="perfil.html">
+                    <img src="/nailDesigner/src/main/resources/static/img/foto-perfil.png" class="foto-perfil-off-canvas" alt="Foto de perfil do usuário">
                 </a>
-                <br>
-                Curta e compartilhe meus vídeos nas
-                <span class="italic-class">redes sociais</span>:
-            </p>
-        </div>
-
-        <div class="instagram-profile">
-            <div class="profile-header">
-                
-                <img src="/img/unha-7.jpg" alt="Profile picture" class="profile-pic">
-                <div class="profile-info">
-                
-                    <p class="username">@naildesignerjx</p>
-                    <p class="name">Jessika Xavier</p>
-                </div>
-                <div class="button">
-                    <a href="https://www.instagram.com/naildesignerjx/">
-                        <button class="follow-btn">Seguir</button>
-                    </a>
-                </div>
-                <div class="button">
-                    <a href="https://www.instagram.com/naildesignerjx/">
-                        <button class="message-btn">✉</button>
-                    </a>
-
-                </div>
-
-
+                <span>Olá, Vinícius!</span>
             </div>
+            <ul>
+                <li><a href="landing-page.html"><i class="fas fa-home"></i> Início</a></li>
+                <li><a href="servicos.html"><i class="fas fa-cut"></i> Serviços</a></li>
+                <li><a href="#"><i class="fas fa-envelope"></i> Contato</a></li>
+                <li><a href="sobremim.html"><i class="fas fa-info-circle"></i> Sobre mim</a></li>
+                <li><a href="meus-agendamentos.html"><i class="fas fa-calendar-alt"></i> Meus Agendamentos</a></li>
+                <li><a href="configuracoes.html"><i class="fas fa-cog"></i> Configurações</a></li>
+            </ul>
+        </nav>
+        <div class="overlay" id="menu-overlay"></div>
+    </header>
+    <div class="overlay" id="menu-overlay"></div>
 
-
-            <div class="video-section">
-                <!-- Vídeo 1 -->
-                <div class="video-thumbnail">
-                    <video loop muted playsinline class="instagram-video" poster="/img/thumbnail1.jpg">
-                        <source src="/img/video1.mp4" type="video/mp4">
-                    </video>
-                    <div class="video-info">
-                        <div class="video-stats">
-                            <span>🤍</span>
-                            <span>▶</span>
-                            <span>💬</span>
-                        </div>
-                    </div>
+    <main>
+        <section class="hero-section">
+            <div class="container hero-content">
+                <div class="hero-text-area">
+                    <p class="hero-intro">Bem-vindo ao</p>
+                    <h1 class="hero-title"><span class="highlight-text">Agende Nail</span></h1>
+                    <p class="hero-slogan">Transformando suas unhas em <span class="italic-highlight">obras de arte</span> com um toque de elegância e praticidade!</p>
+                    <a href="agendamento.html" class="cta-button primary-cta">Agende seu horário agora!</a>
                 </div>
-
-                <!-- Vídeo 2 -->
-                <div class="video-thumbnail">
-                    <video loop muted playsinline class="instagram-video" poster="/img/thumbnail2.jpg">
-                        <source src="/img/video2.mp4" type="video/mp4">
-                    </video>
-                    <div class="video-info">
-                        <div class="video-stats">
-                            <span>🤍</span>
-                            <span>▶</span>
-                            <span>💬</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Vídeo 3 -->
-                <div class="video-thumbnail">
-                    <video loop muted playsinline class="instagram-video" poster="/img/thumbnail3.jpg">
-                        <source src="/img/video3.mp4" type="video/mp4">
-                    </video>
-                    <div class="video-info">
-                        <div class="video-stats">
-                            <span>🤍</span>
-                            <span>▶</span>
-                            <span>💬</span>
-                        </div>
-                    </div>
+                <div class="hero-image-area">
+                    <img th:src="@{/img/hero-main-nail.png}" alt="Unhas elegantes e bem feitas">
                 </div>
             </div>
+            <div class="scroll-down-indicator">
+                <span>Explore</span>
+                <a href="#gallery-section"><i class="fas fa-chevron-down"></i></a>
+            </div>
+        </section>
+
+        <section class="gallery-section" id="gallery-section">
+            <div class="container">
+                <h2 class="section-heading">Nossos <span class="highlight-text">Designs Exclusivos</span></h2>
+                <p class="section-subheading">Inspire-se com a nossa galeria de trabalhos impecáveis e tendências que encantam.</p>
+
+                <div class="image-grid">
+                    <img th:src="@{/img/unha-1.jpg}" alt="Design de Unha 1" class="grid-item">
+                    <img th:src="@{/img/unha-2.jpg}" alt="Design de Unha 2" class="grid-item">
+                    <img th:src="@{/img/unha-3.jpg}" alt="Design de Unha 3" class="grid-item">
+                    <img th:src="@{/img/unha-4.jpg}" alt="Design de Unha 4" class="grid-item">
+                    <img th:src="@{/img/unha-5.jpg}" alt="Design de Unha 5" class="grid-item">
+                    <img th:src="@{/img/unha-6.jpg}" alt="Design de Unha 6" class="grid-item">
+                    <img th:src="@{/img/unha-7.jpg}" alt="Design de Unha 7" class="grid-item">
+                    <img th:src="@{/img/unha-8.jpg}" alt="Design de Unha 8" class="grid-item">
+                    <img th:src="@{/img/unha-9.jpg}" alt="Design de Unha 9" class="grid-item">
+                    <img th:src="@{/img/unha-10.jpg}" alt="Design de Unha 10" class="grid-item">
+                    <img th:src="@{/img/unha-11.jpg}" alt="Design de Unha 11" class="grid-item">
+                    <img th:src="@{/img/unha-12.jpg}" alt="Design de Unha 12" class="grid-item">
+                </div>
+                <a href="servicos.html" class="cta-button secondary-cta">Ver todos os serviços</a>
+            </div>
+        </section>
+
+        <section class="features-section">
+            <div class="container">
+                <div class="feature-item">
+                    <div class="feature-image-area">
+                        <img th:src="@{/img/still-life-beauty-products-spreading-out.jpg}" alt="Produtos de manicure de alta qualidade">
+                    </div>
+                    <div class="feature-text-area">
+                        <i class="fas fa-flask feature-icon"></i>
+                        <h2 class="section-heading">Produtos de <span class="highlight-text">Alta Qualidade</span></h2>
+                        <p class="section-subheading">Utilizamos apenas os melhores esmaltes e materiais para garantir a saúde, durabilidade e o acabamento impecável das suas unhas.</p>
+                        <a href="servicos.html" class="cta-button outline-cta">Saiba mais sobre nossos produtos</a>
+                    </div>
+                </div>
+
+                <div class="feature-item reverse-layout">
+                    <div class="feature-image-area">
+                        <img th:src="@{/img/close-up-manicurist-using-nail-polish.jpg}" alt="Manicurista aplicando esmalte">
+                    </div>
+                    <div class="feature-text-area">
+                        <i class="fas fa-hand-sparkles feature-icon"></i>
+                        <h2 class="section-heading">Serviços <span class="highlight-text">Personalizados</span></h2>
+                        <p class="section-subheading">Do clássico ao mais ousado, oferecemos uma gama completa de serviços para realçar a beleza natural das suas mãos e unhas, com um toque de arte e profissionalismo.</p>
+                        <a href="servicos.html" class="cta-button outline-cta">Explore nossos serviços</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="location-contact-section">
+            <div class="container">
+                <h2 class="section-heading">Encontre-nos e <span class="highlight-text">Conecte-se</span></h2>
+                <div class="location-content-wrapper">
+                    <div class="location-map-area">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3655.201995738871!2d-46.85303358896009!3d-23.631853463319013!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce51b14a976a47%3A0xb36a1c5d9841f3e7!2sRua%20Ant%C3%B4nio%20Baldusco%2C%20Jardim%20Montesano%2C%20Itapecerica%20da%20Serra%20-%20SP!5e0!3m2!1spt-BR!2sbr!4v1716654269018!5m2!1spt-BR!2sbr"
+                            width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                    <div class="contact-info-area">
+                        <h3>Visite nosso espaço!</h3>
+                        <p><i class="fas fa-map-marker-alt"></i> Rua Antônio Baldusco - Jd. Montesano, <br>Itapecerica Da Serra - SP</p>
+                        <a href="https://api.whatsapp.com/send/?phone=5511978168814&text&type=phone_number&app_absent=0" target="_blank" class="whatsapp-contact-button">
+                            <i class="fab fa-whatsapp"></i> Converse Conosco
+                        </a>
+                        <p class="social-connect-prompt">Siga-nos e fique por dentro das novidades:</p>
+                        <div class="social-icons-contact">
+                            <a href="https://www.instagram.com/naildesignerjx/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                            <a href="https://www.tiktok.com/@jessikaxaviier?_t=8e9KNyf8geU&_r=1&fbclid=PAZXh0bgNhZW0CMTEAAaeWMbwgZeRDFisthtCFqAp5x_KeXP-KGYNsEvf7R9koAGBVKo2IEVTE09QOOA_aem_sJLYFqPwHNheywHeLk88-Q" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="instagram-feed-section">
+    <div class="container">
+        <h2 class="section-heading">Confira o que está <span class="highlight-text">Bombando no Instagram</span></h2>
+
+        <div class="instagram-profile-card">
+            <div class="profile-header-card">
+                <img th:src="@{/img/unha-1.jpg}" alt="Foto de perfil @naildesignerjx" class="profile-pic-card">
+                <div class="profile-info-card">
+                    <p class="username-card">@naildesignerjx</p>
+                    <p class="name-card">Jessika Xavier</p>
+                </div>
+                <div class="profile-buttons-card">
+                    <a href="https://www.instagram.com/naildesignerjx/" target="_blank"
+                        class="follow-btn-card"><i class="fab fa-instagram"></i> Seguir</a>
+                    <a href="https://www.instagram.com/direct/t/100000000000000" target="_blank"
+                        class="message-btn-card"><i class="far fa-paper-plane"></i></a>
+                </div>
+            </div>
+
+            <div class="image-grid-instagram">
+                <a href="https://www.instagram.com/p/SEU_POST_ID_1/" target="_blank" rel="noopener noreferrer" class="instagram-item">
+                    <img th:src="@{/img/thumbnail1.jpg}" alt="Foto de unhas do Instagram 1">
+                    <div class="instagram-overlay-icons">
+                        <i class="fas fa-play-circle"></i> <div class="instagram-stats-overlay">
+                            <span><i class="fas fa-heart"></i> 1.2K</span>
+                            <span><i class="fas fa-comment"></i> 50</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="https://www.instagram.com/p/SEU_POST_ID_2/" target="_blank" rel="noopener noreferrer" class="instagram-item">
+                    <img th:src="@{/img/thumbnail2.jpg}" alt="Foto de unhas do Instagram 2">
+                    <div class="instagram-overlay-icons">
+                        <i class="fas fa-play-circle"></i>
+                        <div class="instagram-stats-overlay">
+                            <span><i class="fas fa-heart"></i> 980</span>
+                            <span><i class="fas fa-comment"></i> 35</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="https://www.instagram.com/p/SEU_POST_ID_3/" target="_blank" rel="noopener noreferrer" class="instagram-item">
+                    <img th:src="@{/img/thumbnail3.jpg}" alt="Foto de unhas do Instagram 3">
+                    <div class="instagram-overlay-icons">
+                        <i class="fas fa-play-circle"></i>
+                        <div class="instagram-stats-overlay">
+                            <span><i class="fas fa-heart"></i> 1.5K</span>
+                            <span><i class="fas fa-comment"></i> 70</span>
+                        </div>
+                    </div>
+                </a>
+
+                </div>
         </div>
     </div>
-    <footer>
-        <div class="container-footer">
+</section>
 
-            <div class="footer-text">
-                <p><strong>Endereço:</strong><br>
-                    Rua Antônio Baldusco - Jd. Montesano,<br>
-                    Itapecerica Da Serra - SP
-                </p>
-                <p>@2025 Agende Nail</p>
+    </main>
+
+    <footer id="contact-footer">
+        <div class="container footer-content">
+            <div class="footer-section about">
+                <h3>Agende Nail</h3>
+                <p>Facilitando seu agendamento de unhas com praticidade e rapidez. Conecte-se com as melhores nail designers!</p>
             </div>
-
-            <div class="redes-sociais-footer">
-                <p>Redes Sociais</p>
-                <div>
-                    <a href="https://api.whatsapp.com/send/?phone=5511978168814&text&type=phone_number&app_absent=0"
-                        target="_blank">
-                        <img src="/img/whatsapp-icone.png" alt="WhatsApp">
-                    </a>
-                    <a href="https://www.instagram.com/naildesignerjx/" target="_blank">
-                        <img src="/img/instagram-icone.png" alt="Instagram">
-                    </a>
-                    <a href="https://www.tiktok.com/@jessikaxaviier?_t=8e9KNyf8geU&_r=1" target="_blank">
-                        <img src="/img/tiktok-icone.png" alt="Tik Tok">
-                    </a>
+            <div class="footer-section links">
+                <h3>Links Rápidos</h3>
+                <ul>
+                    <li><a href="landing-page.html">Início</a></li>
+                    <li><a href="servicos.html">Serviços</a></li>
+                    <li><a href="#contact-footer">Contato</a></li>
+                    <li><a href="sobre.html">Sobre mim</a></li>
+                </ul>
+            </div>
+            <div class="footer-section contact">
+                <h3>Contato</h3>
+                <p><i class="fas fa-phone"></i>+55 (11) 97816-8814</p>
+                <p><i class="fas fa-envelope"></i>contato@agendenail.com.br</p>
+                <p><i class="fas fa-map-marker-alt"></i> Itapecerica da Serra, SP/Brasil</p>
+            </div>
+            <div class="footer-section social">
+                <h3>Siga-nos</h3>
+                <div class="social-links">
+                    <a href="https://www.tiktok.com/@jessikaxaviier?_t=8e9KNyf8geU&_r=1&fbclid=PAZXh0bgNhZW0CMTEAAaeWMbwgZeRDFisthtCFqAp5x_KeXP-KGYNsEvf7R9koAGBVKo2IEVTE09QOOA_aem_sJLYFqPwHNheywHeLk88-Q" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                    <a href="https://www.instagram.com/naildesignerjx/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://api.whatsapp.com/send/?phone=5511978168814&text&type=phone_number&app_absent=0" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
                 </div>
             </div>
-
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 Agende Nail. Todos os direitos reservados.</p>
         </div>
     </footer>
 
-
-
+    <script th:src="@{/js/menu.js}"></script>
+    <script th:src="@{/js/landing-page-scripts.js}"></script>
 </body>
 
 </html>
