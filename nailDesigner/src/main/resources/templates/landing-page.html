@@ -10,59 +10,57 @@
     <link href="https://fonts.googleapis.com/css2?family=Hedvig+Letters+Serif:opsz@12..24&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" th:href="@{/css/style_landing_page.css}"
+    <link rel="stylesheet" href="/nailDesigner/src/main/resources/static/css/style_landing_page.css">
     <title>Agenda Nail | Página Inicial - Agende Suas Unhas Agora!</title>
 </head>
 
 <body>
     <header>
         <div class="container header-desktop">
-            <img src="/nailDesigner/src/main/resources/static/img/logo-preto-agende-nail.png" class="logo" alt="Logo Agende Nail">
-            <nav class="menu-desktop" role="navigation">
-                <div class="menu-page"><a href="landing-page.html">Início</a></div>
-                <div class="menu-page"><a href="servicos.html">Serviços</a></div>
-                <div class="menu-page"><a href="#">Contato</a></div>
-                <div class="menu-page"><a href="sobre.html">Sobre mim</a></div>
+            <img th:src="@{/img/logo-preto-agende-nail.png}" class="logo" alt="Logo Agende Nail">
+            <nav class="menu" role="navigation">
+                <div class="menu-page"><a th:href="@{/landing-page}">Início</a></div>
+                <div class="menu-page"><a th:href="@{/servicos}">Serviços</a></div>
+                <div class="menu-page"><a href="#contact-footer">Contato</a></div>
+                <div class="menu-page"><a th:href="@{/sobre}">Sobre mim</a></div>
             </nav>
-            <a href="perfil.html" class="profile-icon-desktop">
-                <img src="/nailDesigner/src/main/resources/static/img/foto-perfil.png" class="foto-perfil" alt="Foto de perfil do usuário">
+            <a th:href="@{/perfil}" class="profile-icon-desktop">
+                <img th:src="@{/img/foto-perfil.png}" class="foto-perfil" alt="Foto de perfil do usuário">
             </a>
         </div>
 
         <div class="header-mobile">
-            <div class="hamburger-icon" id="hamburger-toggle">
-                <i class="fas fa-bars"></i>
-            </div>
-            <img src="/nailDesigner/src/main/resources/static/img/logo-preto-agende-nail.png" class="logo-mobile" alt="Logo Agende Nail Mobile">
-            <a href="perfil.html" class="profile-icon-mobile">
-                <img src="/nailDesigner/src/main/resources/static/img/foto-perfil.png" class="foto-perfil-mobile" alt="Foto de perfil do usuário">
-            </a>
-        </div>
-
-        <nav class="off-canvas-menu" id="off-canvas-menu">
-            <div class="off-canvas-header">
-                <img src="/nailDesigner/src/main/resources/static/img/logo-preto-agende-nail.png" class="logo-off-canvas" alt="Logo Agende Nail">
-                <div class="close-btn" id="off-canvas-close">
-                    <i class="fas fa-times"></i>
-                </div>
-            </div>
-            <div class="off-canvas-profile-info">
-                <a href="perfil.html">
-                    <img src="/nailDesigner/src/main/resources/static/img/foto-perfil.png" class="foto-perfil-off-canvas" alt="Foto de perfil do usuário">
+            <i class="fas fa-bars hamburger-icon" id="hamburger-toggle"></i>
+            <img th:src="@{/img/logo-preto-agende-nail.png}" class="logo-mobile" alt="Logo Agende Nail Mobile">
+            <div class="profile-icon-mobile">
+                <a th:href="@{/perfil}">
+                    <img th:src="@{/img/foto-perfil.png}" class="foto-perfil-mobile" alt="Foto de perfil do usuário (Mobile)">
                 </a>
-                <span>Olá, Vinícius!</span>
             </div>
-            <ul>
-                <li><a href="landing-page.html"><i class="fas fa-home"></i> Início</a></li>
-                <li><a href="servicos.html"><i class="fas fa-cut"></i> Serviços</a></li>
-                <li><a href="#"><i class="fas fa-envelope"></i> Contato</a></li>
-                <li><a href="sobremim.html"><i class="fas fa-info-circle"></i> Sobre mim</a></li>
-                <li><a href="meus-agendamentos.html"><i class="fas fa-calendar-alt"></i> Meus Agendamentos</a></li>
-                <li><a href="configuracoes.html"><i class="fas fa-cog"></i> Configurações</a></li>
-            </ul>
-        </nav>
-        <div class="overlay" id="menu-overlay"></div>
+        </div>
     </header>
+
+    <div class="off-canvas-menu" id="off-canvas-menu">
+        <div class="off-canvas-header">
+            <img th:src="@{/img/logo-preto-agende-nail.png}" class="logo-off-canvas" alt="Logo Agende Nail Off-Canvas">
+            <i class="fas fa-times close-btn" id="off-canvas-close"></i>
+        </div>
+        <div class="off-canvas-profile-info">
+            <img th:src="@{/img/foto-perfil.png}" class="foto-perfil-off-canvas" alt="Foto de perfil Off-Canvas">
+            <span>Olá, Vinícius!</span>
+        </div>
+        <ul>
+            <li><a th:href="@{/landing-page}"><i class="fas fa-home"></i> Início</a></li>
+            <li><a th:href="@{/servicos}"><i class="fas fa-concierge-bell"></i> Serviços</a></li>
+            <li><a href="#"><i class="fas fa-envelope"></i> Contato</a></li>
+            <li><a th:href="@{/sobre}"><i class="fas fa-info-circle"></i> Sobre mim</a></li>
+            <li><a th:href="@{/perfil}"><i class="fas fa-user-circle"></i> Meu Perfil</a></li>
+            <li><a th:href="@{/meus-agendamentos}"><i class="fas fa-calendar-alt"></i> Meus Agendamentos</a></li>
+            <li><a th:href="@{/configuracoes}"><i class="fas fa-cog"></i> Configurações</a></li>
+            <li><a href="#"><i class="fas fa-sign-out-alt"></i> Sair</a></li>
+        </ul>
+    </div>
+
     <div class="overlay" id="menu-overlay"></div>
 
     <main>
@@ -72,7 +70,7 @@
                     <p class="hero-intro">Bem-vindo ao</p>
                     <h1 class="hero-title"><span class="highlight-text">Agende Nail</span></h1>
                     <p class="hero-slogan">Transformando suas unhas em <span class="italic-highlight">obras de arte</span> com um toque de elegância e praticidade!</p>
-                    <a href="agendamento.html" class="cta-button primary-cta">Agende seu horário agora!</a>
+                    <a th:href="@{/agendamento}" class="cta-button primary-cta">Agende seu horário agora!</a>
                 </div>
                 <div class="hero-image-area">
                     <img th:src="@{/img/hero-main-nail.png}" alt="Unhas elegantes e bem feitas">
@@ -103,7 +101,7 @@
                     <img th:src="@{/img/unha-11.jpg}" alt="Design de Unha 11" class="grid-item">
                     <img th:src="@{/img/unha-12.jpg}" alt="Design de Unha 12" class="grid-item">
                 </div>
-                <a href="servicos.html" class="cta-button secondary-cta">Ver todos os serviços</a>
+                <a th:href="@{/servicos}" class="cta-button secondary-cta">Ver todos os serviços</a>
             </div>
         </section>
 
@@ -117,7 +115,7 @@
                         <i class="fas fa-flask feature-icon"></i>
                         <h2 class="section-heading">Produtos de <span class="highlight-text">Alta Qualidade</span></h2>
                         <p class="section-subheading">Utilizamos apenas os melhores esmaltes e materiais para garantir a saúde, durabilidade e o acabamento impecável das suas unhas.</p>
-                        <a href="servicos.html" class="cta-button outline-cta">Saiba mais sobre nossos produtos</a>
+                        <a th:href="@{/servicos}" class="cta-button outline-cta">Saiba mais sobre nossos produtos</a>
                     </div>
                 </div>
 
@@ -129,7 +127,7 @@
                         <i class="fas fa-hand-sparkles feature-icon"></i>
                         <h2 class="section-heading">Serviços <span class="highlight-text">Personalizados</span></h2>
                         <p class="section-subheading">Do clássico ao mais ousado, oferecemos uma gama completa de serviços para realçar a beleza natural das suas mãos e unhas, com um toque de arte e profissionalismo.</p>
-                        <a href="servicos.html" class="cta-button outline-cta">Explore nossos serviços</a>
+                        <a th:href="@{/servicos}" class="cta-button outline-cta">Explore nossos serviços</a>
                     </div>
                 </div>
             </div>
@@ -229,10 +227,9 @@
             <div class="footer-section links">
                 <h3>Links Rápidos</h3>
                 <ul>
-                    <li><a href="landing-page.html">Início</a></li>
-                    <li><a href="servicos.html">Serviços</a></li>
-                    <li><a href="#contact-footer">Contato</a></li>
-                    <li><a href="sobre.html">Sobre mim</a></li>
+                    <li><a th:href="@{/landing-page}">Início</a></li>
+                    <li><a th:href="@{/servicos}">Serviços</a></li>
+                    <li><a th:href="@{/sobre}">Sobre mim</a></li>
                 </ul>
             </div>
             <div class="footer-section contact">
@@ -256,7 +253,6 @@
     </footer>
 
     <script th:src="@{/js/menu.js}"></script>
-    <script th:src="@{/js/landing-page-scripts.js}"></script>
 </body>
 
 </html>

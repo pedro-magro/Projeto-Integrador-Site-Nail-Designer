@@ -828,6 +828,7 @@ footer {
 
     /* Footer */
     footer {
+        margin: auto 0;
         padding: 40px 0 20px;
     }
 }
