@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,7 +8,7 @@
     <meta name="description" content="Site Agende Nail que faz agendamentos de unhas">
     <meta name="keywords" content="landing page, agendamentos de unhas, nail designer">
 
-    <link rel="stylesheet" href="/nailDesigner/src/main/resources/static/css/style-agendamento.css">
+    <link rel="stylesheet" th:href="@{/css/style-agendamento.css}">
 
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Hedvig+Letters+Serif:wght@400&display=swap" rel="stylesheet">
@@ -19,15 +20,16 @@
 <body>
     <header>
         <div class="container header-desktop">
-            <img src="/nailDesigner/src/main/resources/static/img/logo-preto-agende-nail.png" class="logo" alt="Logo Agende Nail">
+            <img th:src="@{/img/logo-preto-agende-nail.png}" class="logo" alt="Logo Agende Nail">
             <nav class="menu-desktop" role="navigation">
-                <div class="menu-page"><a href="landing-page.html">Início</a></div>
-                <div class="menu-page"><a href="servicos.html">Serviços</a></div>
-                <div class="menu-page"><a href="#contact-footer">Contato</a></div>
-                <div class="menu-page"><a href="sobre.html">Sobre mim</a></div>
+                <div class="menu-page"><a th:href="@{/}">Início</a></div>
+                <div class="menu-page"><a th:href="@{/servicos}">Serviços</a></div>
+                <div class="menu-page"><a th:href="@{#contact-footer}">Contato</a></div>
+                <div class="menu-page"><a th:href="@{/meus-agendamentos}">Agenda</a></div>
+                <div class="menu-page"><a th:href="@{/sobre}">Sobre mim</a></div>
             </nav>
-            <a href="perfil.html" class="profile-icon-desktop">
-                <img src="/nailDesigner/src/main/resources/static/img/foto-perfil.png" class="foto-perfil" alt="Foto de perfil do usuário">
+            <a th:href="@{/perfil}" class="profile-icon-desktop">
+                <img th:src="@{/img/foto-perfil.png}" class="foto-perfil" alt="Foto de perfil do usuário">
             </a>
         </div>
 
@@ -35,32 +37,32 @@
             <div class="hamburger-icon" id="hamburger-toggle">
                 <i class="fas fa-bars"></i>
             </div>
-            <img src="/nailDesigner/src/main/resources/static/img/logo-preto-agende-nail.png" class="logo-mobile" alt="Logo Agende Nail Mobile">
-            <a href="perfil.html" class="profile-icon-mobile">
-                <img src="/nailDesigner/src/main/resources/static/img/foto-perfil.png" class="foto-perfil-mobile" alt="Foto de perfil do usuário">
+            <img th:src="@{/img/logo-preto-agende-nail.png}" class="logo-mobile" alt="Logo Agende Nail Mobile">
+            <a th:href="@{/perfil}" class="profile-icon-mobile">
+                <img th:src="@{/img/foto-perfil.png}" class="foto-perfil-mobile" alt="Foto de perfil do usuário">
             </a>
         </div>
 
         <nav class="off-canvas-menu" id="off-canvas-menu">
             <div class="off-canvas-header">
-                <img src="/nailDesigner/src/main/resources/static/img/logo-preto-agende-nail.png" class="logo-off-canvas" alt="Logo Agende Nail">
+                <img th:src="@{/img/logo-preto-agende-nail.png}" class="logo-off-canvas" alt="Logo Agende Nail">
                 <div class="close-btn" id="off-canvas-close">
                     <i class="fas fa-times"></i>
                 </div>
             </div>
             <div class="off-canvas-profile-info">
-                <a href="perfil.html">
-                    <img src="/nailDesigner/src/main/resources/static/img/foto-perfil.png" class="foto-perfil-off-canvas" alt="Foto de perfil do usuário">
+                <a th:href="@{/perfil}">
+                    <img th:src="@{/img/foto-perfil.png}" class="foto-perfil-off-canvas" alt="Foto de perfil do usuário">
                 </a>
                 <span>Olá, Vinícius!</span>
             </div>
             <ul>
-                <li><a href="landing-page.html"><i class="fas fa-home"></i> Início</a></li>
-                <li><a href="servicos.html"><i class="fas fa-cut"></i> Serviços</a></li>
-                <li><a href="#contact-footer"><i class="fas fa-envelope"></i> Contato</a></li>
-                <li><a href="sobremim.html"><i class="fas fa-info-circle"></i> Sobre mim</a></li>
-                <li><a href="meus-agendamentos.html"><i class="fas fa-calendar-alt"></i> Meus Agendamentos</a></li>
-                <li><a href="configuracoes.html"><i class="fas fa-cog"></i> Configurações</a></li>
+                <li><a th:href="@{/}"><i class="fas fa-home"></i> Início</a></li>
+                <li><a th:href="@{/servicos}"><i class="fas fa-cut"></i> Serviços</a></li>
+                <li><a th:href="@{#contact-footer}"><i class="fas fa-envelope"></i> Contato</a></li>
+                <li><a th:href="@{/sobre}"><i class="fas fa-info-circle"></i> Sobre mim</a></li>
+                <li><a th:href="@{/meus-agendamentos}"><i class="fas fa-calendar-alt"></i> Meus Agendamentos</a></li>
+                <li><a th:href="@{/configuracoes}"><i class="fas fa-cog"></i> Configurações</a></li>
             </ul>
         </nav>
         <div class="overlay" id="menu-overlay"></div>
@@ -111,10 +113,9 @@
             <div class="footer-section links">
                 <h3>Links Rápidos</h3>
                 <ul>
-                    <li><a href="landing-page.html">Início</a></li>
-                    <li><a href="servicos.html">Serviços</a></li>
-                    <li><a href="#">Contato</a></li>
-                    <li><a href="sobremim.html">Sobre mim</a></li>
+                    <li><a th:href="@{/}">Início</a></li>
+                    <li><a th:href="@{/servicos}">Serviços</a></li>
+                    <li><a th:href="@{/sobre}">Sobre mim</a></li>
                 </ul>
             </div>
             <div class="footer-section contact">
@@ -137,6 +138,6 @@
         </div>
     </footer>
 
-    <script src="/nailDesigner/src/main/resources/static/js/menu.js"></script>
+    <script th:src="@{/js/menu.js}"></script>
 </body>
 </html>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <meta charset="UTF-8">
@@ -10,31 +10,32 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Hedvig+Letters+Serif:opsz@12..24&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="/nailDesigner/src/main/resources/static/css/style_sobre_mim.css">
+    <link rel="stylesheet" th:href="@{/css/style_sobre_mim.css}">
     <title>Agenda Nail | Sobre mim</title>
 </head>
 
 <body>
     <header>
         <div class="container header-desktop">
-            <img src="/nailDesigner/src/main/resources/static/img/logo-preto-agende-nail.png" class="logo" alt="Logo Agende Nail">
+            <img th:src="@{/img/logo-preto-agende-nail.png}" class="logo" alt="Logo Agende Nail">
             <nav class="menu" role="navigation">
-                <div class="menu-page"><a href="landing-page.html">Início</a></div>
-                <div class="menu-page"><a href="servicos.html">Serviços</a></div>
-                <div class="menu-page"><a href="#contact-footer">Contato</a></div>
-                <div class="menu-page"><a href="sobre.html">Sobre mim</a></div>
+                <div class="menu-page"><a th:href="@{/}">Início</a></div>
+                <div class="menu-page"><a th:href="@{/servicos}">Serviços</a></div>
+                <div class="menu-page"><a th:href="@{#contact-footer}">Contato</a></div>
+                <div class="menu-page"><a th:href="@{/meus-agendamentos}">Agenda</a></div>
+                <div class="menu-page"><a th:href="@{/sobre}">Sobre mim</a></div>
             </nav>
-            <a href="perfil.html" class="profile-icon-desktop">
-                <img src="/nailDesigner/src/main/resources/static/img/foto-perfil.png" class="foto-perfil" alt="Foto de perfil do usuário">
+            <a th:href="@{/perfil}" class="profile-icon-desktop">
+                <img th:src="@{/img/foto-perfil.png}" class="foto-perfil" alt="Foto de perfil do usuário">
             </a>
         </div>
 
         <div class="header-mobile">
             <i class="fas fa-bars hamburger-icon" id="hamburger-toggle"></i>
-            <img src="/nailDesigner/src/main/resources/static/img/logo-preto-agende-nail.png" class="logo-mobile" alt="Logo Agende Nail Mobile">
+            <img th:src="@{/img/logo-preto-agende-nail.png}" class="logo-mobile" alt="Logo Agende Nail Mobile">
             <div class="profile-icon-mobile">
-                <a href="perfil.html">
-                    <img src="/nailDesigner/src/main/resources/static/img/foto-perfil.png" class="foto-perfil-mobile" alt="Foto de perfil do usuário (Mobile)">
+                <a th:href="@{/perfil}">
+                    <img th:src="@{/img/foto-perfil.png}" class="foto-perfil-mobile" alt="Foto de perfil do usuário (Mobile)">
                 </a>
             </div>
         </div>
@@ -42,21 +43,24 @@
 
     <div class="off-canvas-menu" id="off-canvas-menu">
         <div class="off-canvas-header">
-            <img src="/nailDesigner/src/main/resources/static/img/logo-preto-agende-nail.png" class="logo-off-canvas" alt="Logo Agende Nail Off-Canvas">
+            <img th:src="@{/img/logo-preto-agende-nail.png}" class="logo-off-canvas" alt="Logo Agende Nail Off-Canvas">
             <i class="fas fa-times close-btn" id="off-canvas-close"></i>
         </div>
         <div class="off-canvas-profile-info">
-            <img src="/nailDesigner/src/main/resources/static/img/foto-perfil.png" class="foto-perfil-off-canvas" alt="Foto de perfil Off-Canvas">
-            <span>Olá, Usuário!</span>
-        </div>
-        <ul>
-            <li><a href="landing-page.html"><i class="fas fa-home"></i> Início</a></li>
-            <li><a href="servicos.html"><i class="fas fa-concierge-bell"></i> Serviços</a></li>
-            <li><a href="#contact-footer"><i class="fas fa-envelope"></i> Contato</a></li>
-            <li><a href="sobre.html"><i class="fas fa-info-circle"></i> Sobre mim</a></li>
-            <li><a href="perfil.html"><i class="fas fa-user-circle"></i> Meu Perfil</a></li>
-            <li><a href="#"><i class="fas fa-sign-out-alt"></i> Sair</a></li>
-        </ul>
+            <img th:src="@{/img/foto-perfil.png}" class="foto-perfil-off-canvas" alt="Foto de perfil Off-Canvas">
+            <span>Olá, Visitante!</span>
+            </div>
+            <ul>
+                <li><a th:href="@{/}"><i class="fas fa-home"></i> Início</a></li>
+                <li><a th:href="@{/servicos}"><i class="fas fa-hand-sparkles"></i> Serviços</a></li>
+                <li><a th:href="@{#}"><i class="fas fa-phone-alt"></i> Contato</a></li>
+                <li><a th:href="@{#}"><i class="fas fa-calendar"></i> Agendar</a></li>
+                <li><a th:href="@{#}"><i class="fas fa-calendar-alt"></i> Meus Agendamentos</a></li>
+                <li><a th:href="@{/sobre}"><i class="fas fa-info-circle"></i> Sobre mim</a></li>
+                <li><a th:href="@{/login}"><i class="fas fa-sign-in-alt"></i> Login</a></li>
+                <li><a th:href="@{/cadastro}"><i class="fas fa-user-plus"></i>Cadastre-se</a></li>
+                <li><a th:href="@{/cadastro}"><i class="fas fa-sign-out-alt"></i> Sair</a></li>
+            </ul>
     </div>
 
     <div class="overlay" id="menu-overlay"></div>
@@ -64,49 +68,39 @@
     <main class="sobre-container">
         <section class="sobre-conteudo">
             <div class="sobre-imagem">
-                <img src="logo-preto-agende-nail.png" alt="Foto de Jessika Xavier" />
+                <img th:src="@{/img/logo-preto-agende-nail.png}" alt="Foto de Jessika Xavier" />
             </div>
 
             <h1>Sobre mim</h1>
-            <p>Olá! Eu sou <strong>Jessika Xavier</strong>, Nail Designer apaixonada pelo que faço. Desde o primeiro
-                atendimento, minha missão é muito clara: entregar não só unhas impecáveis, mas também uma experiência
-                leve, acolhedora e transformadora para cada cliente.</p>
+            <p>Olá! Eu sou **Jessika Xavier**, Nail Designer apaixonada pelo que faço. Desde o primeiro atendimento, minha missão é muito clara: entregar não só unhas impecáveis, mas também uma experiência leve, acolhedora e transformadora para cada cliente.</p>
             <br>
-            <p>Trabalho com <strong>técnicas modernas, produtos de qualidade</strong> e foco total na higiene e no
-                cuidado. Faço questão de oferecer um espaço onde você se sinta bem-vinda, segura e valorizada.</p>
+            <p>Trabalho com **técnicas modernas, produtos de qualidade** e foco total na higiene e no cuidado. Faço questão de oferecer um espaço onde você se sinta bem-vinda, segura e valorizada.</p>
             <br>
-            <p>Unhas bonitas e bem cuidadas são mais do que estética — são expressão, autoestima e amor-próprio. Por
-                isso, cada agendamento é tratado com responsabilidade, carinho e dedicação.</p>
+            <p>Unhas bonitas e bem cuidadas são mais do que estética — são expressão, autoestima e amor-próprio. Por isso, cada agendamento é tratado com responsabilidade, carinho e dedicação.</p>
         </section>
 
         <section class="sobre-valores">
             <h2>Meus diferenciais</h2>
             <ul>
-                <li><strong>Atendimento personalizado:</strong> cada cliente é única e merece atenção exclusiva.
-                </li>
-                <li><strong>Ambiente acolhedor:</strong> conforto, respeito e leveza em cada detalhe.</li>
-                <li><strong>Compromisso com a higiene:</strong> esterilização, cuidados e protocolos atualizados.
-                </li>
-                <li><strong>Atualização constante:</strong> invisto sempre em cursos e aperfeiçoamento técnico.</li>
+                <li>**Atendimento personalizado:** cada cliente é única e merece atenção exclusiva.</li>
+                <li>**Ambiente acolhedor:** conforto, respeito e leveza em cada detalhe.</li>
+                <li>**Compromisso com a higiene:** esterilização, cuidados e protocolos atualizados.</li>
+                <li>**Atualização constante:** invisto sempre em cursos e aperfeiçoamento técnico.</li>
             </ul>
         </section>
         
         <section class="sobre-missao">
             <h2>Missão, Visão e Propósito</h2>
-            <p><strong>Missão:</strong> Cuidar da beleza e autoestima das minhas clientes com excelência, carinho e
-                respeito.</p>
-            <p><strong>Visão:</strong> Ser referência como Nail Designer na minha região, reconhecida pela qualidade
-                e pelo atendimento humano.</p>
-            <p><strong>Propósito:</strong> Transformar momentos simples em experiências de cuidado e empoderamento
-                feminino.</p>
+            <p>**Missão:** Cuidar da beleza e autoestima das minhas clientes com excelência, carinho e respeito.</p>
+            <p>**Visão:** Ser referência como Nail Designer na minha região, reconhecida pela qualidade e pelo atendimento humano.</p>
+            <p>**Propósito:** Transformar momentos simples em experiências de cuidado e empoderamento feminino.</p>
         </section>
 
         <section class="sobre-cta">
             <h2>Agende seu horário</h2>
-            <p>Está pronta para transformar seu dia com unhas lindas e bem cuidadas? Clique no botão abaixo e agende
-                seu atendimento comigo!</p>
+            <p>Está pronta para transformar seu dia com unhas lindas e bem cuidadas? Clique no botão abaixo e agende seu atendimento comigo!</p>
             <div class="btn">
-                <a href="agendamento.html" class="botao-agendar">Agendar agora</a>
+                <a th:href="@{/agendamento}" class="botao-agendar">Agendar agora</a>
             </div>
         </section>
     </main>
@@ -120,9 +114,10 @@
             <div class="footer-section links">
                 <h3>Links Rápidos</h3>
                 <ul>
-                    <li><a href="landing-page.html">Início</a></li>
-                    <li><a href="servicos.html">Serviços</a></li>
-                    <li><a href="sobre.html">Sobre mim</a></li>
+                    <li><a th:href="@{/}">Início</a></li>
+                    <li><a th:href="@{/servicos}">Serviços</a></li>
+                    <li><a th:href="@{/meus-agendamentos}">Agendamentos</a></li>
+                    <li><a th:href="@{/sobre}">Sobre mim</a></li>
                 </ul>
             </div>
             <div class="footer-section contact">
@@ -145,7 +140,7 @@
         </div>
     </footer>
 
-    <script src="/nailDesigner/src/main/resources/static/js/menu.js"></script>
+    <script th:src="@{/js/menu.js}"></script>
 
 </body>
 
