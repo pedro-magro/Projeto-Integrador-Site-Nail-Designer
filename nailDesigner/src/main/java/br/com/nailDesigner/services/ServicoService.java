@@ -36,7 +36,10 @@ public class ServicoService {
 	}
 	
 	public void excluir(Long id) {
-		servicoRepo.deleteById(id);
+	    Servico servico = servicoRepo.findById(id)
+	        .orElseThrow(() -> new EntityNotFoundException("Serviço não encontrado com ID: " + id));
+	    
+	    servicoRepo.delete(servico);
 	}
 	
 	public ServicoDTO buscarPorId(Long id) {
@@ -60,5 +63,6 @@ public class ServicoService {
 	public List<ServicoDTO> listarTodos(){
 		return servicoRepo.findAll().stream().map(this::toDTO).collect(Collectors.toList());
 	}
+	
 	
 }

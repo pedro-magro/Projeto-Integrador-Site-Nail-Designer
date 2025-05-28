@@ -35,7 +35,7 @@ public class AgendamentoController {
         model.addAttribute("agendamento", new AgendamentoDTO());
         model.addAttribute("servicos", servicoService.listarTodos());
         model.addAttribute("funcionarios", usuarioService.listarFuncionarios());
-        return "agendamento";
+        return "agendamento/form";
     }
 
     @PreAuthorize("hasRole('CLIENTE')")

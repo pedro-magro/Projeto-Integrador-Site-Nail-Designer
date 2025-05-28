@@ -67,4 +67,21 @@ public class DisponibilidadeService {
 		return disponibilidadeRepo.findAll().stream().map(this::toDTO).collect(Collectors.toList());
 	}
 
+	public DisponibilidadeDTO atualizar(DisponibilidadeDTO dto) {
+	    Disponibilidade disponibilidadeExistente = disponibilidadeRepo.findById(dto.getId())
+	        .orElseThrow(() -> new RuntimeException("Disponibilidade não encontrada"));
+
+	    disponibilidadeExistente.setDiaSemana(dto.getDiaSemana());
+	    disponibilidadeExistente.setHoraInicio(dto.getHoraInicio());
+	    disponibilidadeExistente.setHoraFim(dto.getHoraFim());
+
+	    if (dto.getFuncionarioId() != null) {
+	        Usuario funcionario = usuarioRepo.findById(dto.getFuncionarioId())
+	            .orElseThrow(() -> new RuntimeException("Funcionário não encontrado"));
+	        disponibilidadeExistente.setFuncionario(funcionario);
+	    }
+
+	    return toDTO(disponibilidadeRepo.save(disponibilidadeExistente));
+	}
+
 }
