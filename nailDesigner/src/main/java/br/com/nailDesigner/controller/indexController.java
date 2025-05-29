@@ -10,4 +10,6 @@ public class indexController {
 	public String inicio() {
 		return "landing-page";
 	}
+
+	
 }
