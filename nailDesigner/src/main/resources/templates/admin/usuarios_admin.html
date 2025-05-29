@@ -9,9 +9,10 @@
     <meta name="keywords" content="administração, usuários, clientes, funcionários, CRUD, nail designer">
 
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Hedvig+Letters+Serif:opsz@12..24&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Hedvig+Letters+Serif:opsz@12..24&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    
+
     <link rel="stylesheet" th:href="@{/css/style_usuarios_admin.css}" />
 
     <title>Agenda Nail | Admin - Usuários</title>
@@ -22,10 +23,11 @@
         <div class="container header-desktop">
             <img th:src="@{/img/logo-preto-agende-nail.png}" class="logo" alt="Logo Agende Nail">
             <nav class="menu" role="navigation">
-                <div class="menu-page"><a th:href="@{/admin/agendamentos}">Agendamentos</a></div>
-                <div class="menu-page"><a th:href="@{/admin/servicos}">Serviços</a></div>
-                <div class="menu-page"><a th:href="@{/admin/usuarios}">Usuários</a></div>
-                <div class="menu-page"><a th:href="@{/admin/disponibilidade}">Disponibilidade</a></div>
+                <div class="menu-page active"><a th:href="@{/admin/dashboard}">Dashboard</a></div>
+                <div class="menu-page"><a th:href="@{/admin/agendamentos_admin}">Agendamentos</a></div>
+                <div class="menu-page"><a th:href="@{/admin/usuarios_admin}">Usuários</a></div>
+                <div class="menu-page"><a th:href="@{/admin/servicos_admin}">Serviços</a></div>
+                <div class="menu-page"><a th:href="@{/admin/disponibilidade_admin}">Disponibilidade</a></div>
             </nav>
             <a th:href="@{/admin/perfil}" class="profile-icon-desktop">
                 <img th:src="@{/img/foto-perfil.png}" class="foto-perfil" alt="Foto de perfil do administrador">
@@ -37,7 +39,8 @@
             <img th:src="@{/img/logo-preto-agende-nail.png}" class="logo-mobile" alt="Logo Agende Nail Mobile">
             <div class="profile-icon-mobile">
                 <a th:href="@{/admin/perfil}">
-                    <img th:src="@{/img/foto-perfil.png}" class="foto-perfil-mobile" alt="Foto de perfil do administrador (Mobile)">
+                    <img th:src="@{/img/foto-perfil.png}" class="foto-perfil-mobile"
+                        alt="Foto de perfil do administrador (Mobile)">
                 </a>
             </div>
         </div>
@@ -53,12 +56,12 @@
             <span>Olá, Admin!</span>
         </div>
         <ul>
-            <li><a th:href="@{/admin/agendamentos}"><i class="fas fa-calendar-alt"></i> Agendamentos</a></li>
-            <li><a th:href="@{/admin/servicos}"><i class="fas fa-cut"></i> Serviços</a></li>
-            <li><a th:href="@{/admin/usuarios}"><i class="fas fa-users"></i> Usuários</a></li>
-            <li><a th:href="@{/admin/disponibilidade}"><i class="fas fa-clock"></i> Disponibilidade</a></li>
+            <li><a th:href="@{/admin/dashboard_admin}"><i class="fas fa-th-large"></i> Dashboard</a></li>
+            <li><a th:href="@{/admin/agendamentos_admin}"><i class="fas fa-calendar-alt"></i> Agendamentos</a></li>
+            <li><a th:href="@{/admin/usuarios_admin}"><i class="fas fa-users"></i> Usuários</a></li>
+            <li><a th:href="@{/admin/servicos_admin}"><i class="fas fa-cut"></i> Serviços</a></li>
+            <li><a th:href="@{/admin/disponibilidade_admin}"><i class="fas fa-clock"></i> Disponibilidade</a></li>
             <li><a th:href="@{/admin/perfil}"><i class="fas fa-user-circle"></i> Meu Perfil</a></li>
-            <li><a th:href="@{#}"><i class="fas fa-sign-out-alt"></i> Sair</a></li>
         </ul>
     </div>
 
@@ -68,12 +71,14 @@
         <section class="usuarios-admin-section">
             <div class="container">
                 <h1 class="section-title">Gerenciar Usuários</h1>
-                <p class="section-description">Visualize, adicione, edite ou remova contas de usuários (clientes e funcionários).</p>
+                <p class="section-description">Visualize, adicione, edite ou remova contas de usuários (clientes e
+                    funcionários).</p>
 
                 <div class="usuario-form-card">
                     <h2>Adicionar / Editar Usuário</h2>
                     <form id="usuario-form">
-                        <input type="hidden" id="usuario-id" value=""> <div class="form-group">
+                        <input type="hidden" id="usuario-id" value="">
+                        <div class="form-group">
                             <label for="usuario-nome">Nome Completo</label>
                             <input type="text" id="usuario-nome" placeholder="Nome do usuário" required />
                         </div>
@@ -97,8 +102,10 @@
                                 <option value="ADMIN">Administrador</option>
                             </select>
                         </div>
-                        <button type="submit" class="btn-primary" id="btn-salvar-usuario"><i class="fas fa-save"></i> Salvar Usuário</button>
-                        <button type="button" class="btn-secondary" id="btn-limpar-form" style="display: none;"><i class="fas fa-eraser"></i> Limpar Formulário</button>
+                        <button type="submit" class="btn-primary" id="btn-salvar-usuario"><i class="fas fa-save"></i>
+                            Salvar Usuário</button>
+                        <button type="button" class="btn-secondary" id="btn-limpar-form" style="display: none;"><i
+                                class="fas fa-eraser"></i> Limpar Formulário</button>
                     </form>
                 </div>
 
@@ -129,7 +136,7 @@
                                 <button class="btn-delete" data-id="2"><i class="fas fa-trash-alt"></i></button>
                             </div>
                         </div>
-                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -139,15 +146,17 @@
         <div class="container footer-content">
             <div class="footer-section about">
                 <h3>Agende Nail</h3>
-                <p>Facilitando seu agendamento de unhas com praticidade e rapidez. Conecte-se com as melhores nail designers!</p>
+                <p>Facilitando seu agendamento de unhas com praticidade e rapidez. Conecte-se com as melhores nail
+                    designers!</p>
             </div>
             <div class="footer-section links">
                 <h3>Links Rápidos</h3>
                 <ul>
-                    <li><a th:href="@{/}">Início</a></li>
-                    <li><a th:href="@{/servicos.html}">Serviços</a></li>
-                    <li><a th:href="@{#}">Contato</a></li>
-                    <li><a th:href="@{/sobre.html}">Sobre mim</a></li>
+                    <li><a th:href="@{/}">Painel de clientes</a></li>
+                    <li><a th:href="@{/agendamentos_admin}">Gerenciar Agendamentos</a></li>
+                    <li><a th:href="@{/usuarios_admin}">Gerenciar Usuários</a></li>
+                    <li><a th:href="@{/servicos_admin}">Gerenciar Serviços</a></li>
+                    <li><a th:href="@{/disponibilidade_admin}">Gerenciar Disponibilidade</a></li>
                 </ul>
             </div>
             <div class="footer-section contact">
@@ -159,9 +168,12 @@
             <div class="footer-section social">
                 <h3>Siga-nos</h3>
                 <div class="social-links">
-                    <a href="https://www.tiktok.com/@jessikaxaviier?_t=8e9KNyf8geU&_r=1&fbclid=PAZXh0bgNhZW0CMTEAAaeWMbwgZeRDFisthtCFqAp5x_KeXP-KGYNsEvf7R9koAGBVKo2IEVTE09QOOA_aem_sJLYFqPwHNheywHeLk88-Q" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
-                    <a href="https://www.instagram.com/naildesignerjx/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                    <a href="https://api.whatsapp.com/send/?phone=5511978168814&text&type=phone_number&app_absent=0" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    <a href="https://www.tiktok.com/@jessikaxaviier?_t=8e9KNyf8geU&_r=1&fbclid=PAZXh0bgNhZW0CMTEAAaeWMbwgZeRDFisthtCFqAp5x_KeXP-KGYNsEvf7R9koAGBVKo2IEVTE09QOOA_aem_sJLYFqPwHNheywHeLk88-Q"
+                        target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                    <a href="https://www.instagram.com/naildesignerjx/" target="_blank" aria-label="Instagram"><i
+                            class="fab fa-instagram"></i></a>
+                    <a href="https://api.whatsapp.com/send/?phone=5511978168814&text&type=phone_number&app_absent=0"
+                        target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
                 </div>
             </div>
         </div>
