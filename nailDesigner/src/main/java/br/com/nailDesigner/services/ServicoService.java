@@ -22,6 +22,7 @@ public class ServicoService {
 	        dto.setNome(servico.getNome());
 	        dto.setDescricao(servico.getDescricao());
 	        dto.setPreco(servico.getPreco());
+			dto.setDuracao(servico.getDuracao());
 	        dto.setImagens(servico.getImagens());
 	        return dto;
 	}
@@ -31,6 +32,7 @@ public class ServicoService {
         servico.setNome(dto.getNome());
         servico.setDescricao(dto.getDescricao());
         servico.setPreco(dto.getPreco());
+		servico.setDuracao(dto.getDuracao());
         servico.setImagens(dto.getImagens());
         return toDTO(servicoRepo.save(servico));
 	}
@@ -53,6 +55,7 @@ public class ServicoService {
 	    servico.setNome(dto.getNome());
 	    servico.setDescricao(dto.getDescricao());
 	    servico.setPreco(dto.getPreco());
+		servico.setDuracao(dto.getDuracao());
 	    if (dto.getImagens() != null && !dto.getImagens().isEmpty()) {
 	        servico.setImagens(dto.getImagens());
 	    }

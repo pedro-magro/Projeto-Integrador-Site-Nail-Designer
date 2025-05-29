@@ -58,11 +58,13 @@
             </div>
             <ul>
                 <li><a th:href="@{/}"><i class="fas fa-home"></i> Início</a></li>
-                <li><a th:href="@{/servicos}"><i class="fas fa-cut"></i> Serviços</a></li>
-                <li><a th:href="@{#contact-footer}"><i class="fas fa-envelope"></i> Contato</a></li>
+                <li><a th:href="@{/servicos}"><i class="fas fa-hand-sparkles"></i> Serviços</a></li>
+                <li><a href="#contact-footer"><i class="fas fa-phone-alt"></i> Contato</a></li>
+                <li><a th:href="@{/agendamento}"><i class="fas fa-calendar"></i> Agendar</a></li>
+                <li><a th:href="@{meus-agendamentos}"><i class="fas fa-calendar-alt"></i> Meus Agendamentos</a></li>
                 <li><a th:href="@{/sobre}"><i class="fas fa-info-circle"></i> Sobre mim</a></li>
-                <li><a th:href="@{/meus-agendamentos}"><i class="fas fa-calendar-alt"></i> Meus Agendamentos</a></li>
-                <li><a th:href="@{/configuracoes}"><i class="fas fa-cog"></i> Configurações</a></li>
+                <li><a th:href="@{/login}"><i class="fas fa-sign-in-alt"></i> Login</a></li>
+                <li><a th:href="@{/cadastro}"><i class="fas fa-user-plus"></i>Cadastre-se</a></li>
             </ul>
         </nav>
         <div class="overlay" id="menu-overlay"></div>
@@ -115,7 +117,10 @@
                 <ul>
                     <li><a th:href="@{/}">Início</a></li>
                     <li><a th:href="@{/servicos}">Serviços</a></li>
+                    <li><a th:href="@{/agendamento}">Agendar</a></li>
+                    <li><a th:href="@{/meus-agendamentos}">Meus Agendamentos</a></li>
                     <li><a th:href="@{/sobre}">Sobre mim</a></li>
+                    <li><a th:href="@{/admin/admin_dashboard}">Painel de Administrador</a></li>
                 </ul>
             </div>
             <div class="footer-section contact">

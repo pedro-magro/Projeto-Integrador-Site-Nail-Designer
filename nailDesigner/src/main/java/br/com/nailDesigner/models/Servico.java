@@ -4,6 +4,7 @@ import java.util.List;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
 
 @Entity
 public class Servico {
@@ -18,8 +19,12 @@ public class Servico {
 	@NotEmpty
 	private String descricao;
 	
-	@NotEmpty
+	@NotNull
 	private Double preco;
+
+	@NotNull
+	private Integer duracao;
+	
 	
 	@ElementCollection
 	private List<String> imagens; //Url das imagens 
@@ -58,6 +63,14 @@ public class Servico {
 
 	public void setPreco(Double preco) {
 		this.preco = preco;
+	}
+
+	public Integer getDuracao() {
+		return duracao;
+	}
+
+	public void setDuracao(Integer duracao) {
+		this.duracao = duracao;
 	}
 
 	public List<String> getImagens() {
